@@ -23,4 +23,9 @@ public class TextArc
     public float speed { get { return baseSpeed * speedMultiplier; } set { speedMultiplier = value; } }
     private const float baseSpeed = 1;
     private float speedMultiplier = 1;
+
+    public int charactersPerCycle { get { return speed <= 2f ? characterMultiplier : speed <= 2.5f ? characterMultiplier * 2 : characterMultiplier * 3; } } //variable speed
+    private int characterMultiplier = 1;
+
+    public bool speedUp = false;
 }
