@@ -28,4 +28,13 @@ public class TextArc
     private int characterMultiplier = 1;
 
     public bool speedUp = false;
+
+    public TextArc(TextMeshProUGUI tMProUI)
+    {
+        this.tMProUI = tMProUI;
+    }
+    public TextArc(TextMeshPro tMProWorld)
+    {
+        this.tMProWorld = tMProWorld;
+    }
 }
