@@ -24,7 +24,7 @@ namespace TESTING
         {
             ds = DialogueSys.instance;
             arc = new TextArc(ds.dialogueCont.dialogueTxt);
-            arc.buildMethod = TextArc.BuildMethod.instant;
+            arc.buildMethod = TextArc.BuildMethod.typewriter;
         }
 
         // Update is called once per frame
