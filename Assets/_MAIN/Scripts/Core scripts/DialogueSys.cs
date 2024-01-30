@@ -1,11 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class DialogueSys : MonoBehaviour
 {
 
-    [SerializeField] private DialogueCont dialogueCont = new DialogueCont();
+    public DialogueCont dialogueCont = new DialogueCont();
+
+    public static DialogueSys instance; //singleton
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else
+            DestroyImmediate(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
