@@ -128,7 +128,18 @@ public class TextArc
     }
     private void PrepareTypewriter()
     {
+        tMPro.color = tMPro.color;
+        tMPro.maxVisibleCharacters = 0;
+        tMPro.text = preTxt;
 
+        if(preTxt != "")
+        {
+            tMPro.ForceMeshUpdate();
+            tMPro.maxVisibleCharacters = tMPro.textInfo.characterCount;
+        }
+
+        tMPro.text += targetTxt;
+        tMPro.ForceMeshUpdate();
     }
 
     private void PrepareFade()
@@ -139,7 +150,12 @@ public class TextArc
 
     private IEnumerator BuildTypewriter()
     {
-        yield return null;
+        while(tMPro.maxVisibleCharacters < tMPro.textInfo.characterCount)
+        {
+            tMPro.maxVisibleCharacters += speedUp ? charactersPerCycle * 5 : charactersPerCycle; //account for speed
+
+            yield return new WaitForSeconds(0.015f / speed); //allow time
+        }
     }
 
     private IEnumerator BuildFade()
