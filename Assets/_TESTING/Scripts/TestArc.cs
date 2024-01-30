@@ -32,6 +32,10 @@ namespace TESTING
         {
             if (Input.GetKeyDown(KeyCode.Space))
                 arc.Build(lines[Random.Range(0, lines.Length)]);
+            else if (Input.GetKeyDown(KeyCode.A))
+            {
+                arc.Append(lines[Random.Range(0, lines.Length)]);
+            }
         }
     }
 }
