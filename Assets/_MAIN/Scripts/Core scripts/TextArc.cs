@@ -1,19 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class TextArc : MonoBehaviour
+public class TextArc
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private TextMeshProUGUI tMProUI;
+    private TextMeshPro tMProWorld;
+    public TMP_Text tMPro => tMProUI != null ? tMProUI : tMProWorld;
 }
