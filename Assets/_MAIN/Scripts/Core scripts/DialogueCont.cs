@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 
+[System.Serializable]
 public class DialogueCont
 {
     public GameObject root;
