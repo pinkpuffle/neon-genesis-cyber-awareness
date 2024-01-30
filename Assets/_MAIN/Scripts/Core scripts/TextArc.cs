@@ -79,7 +79,70 @@ public class TextArc
         buildProcess = null;
     }
 
+    //building process
     IEnumerator Building()
+    {
+        Prepare();
+
+        switch (buildMethod)
+        {
+            case BuildMethod.typewriter:
+                yield return BuildTypewriter();
+                break;
+            case BuildMethod.fade:
+                yield return BuildFade();
+                break;
+        }
+
+
+    }
+
+    private void Oncomplete()
+    {
+        buildProcess = null;
+    }
+
+    //prepare based on build method
+    private void Prepare()
+    {
+        switch (buildMethod)
+        {
+            case BuildMethod.instant:
+                PrepareInstant();
+                break;
+            case BuildMethod.typewriter:
+                PrepareTypewriter();
+                break;
+            case BuildMethod.fade:
+                PrepareFade();
+                break;
+        }
+    }
+
+    private void PrepareInstant()
+    {
+        tMPro.color = tMPro.color; //reinitilize
+        tMPro.text = fullTargetTxt;
+        tMPro.ForceMeshUpdate(); //force update
+        tMPro.maxVisibleCharacters = tMPro.textInfo.characterCount; //every char visible
+    }
+    private void PrepareTypewriter()
+    {
+
+    }
+
+    private void PrepareFade()
+    {
+
+    }
+
+
+    private IEnumerator BuildTypewriter()
+    {
+        yield return null;
+    }
+
+    private IEnumerator BuildFade()
     {
         yield return null;
     }
