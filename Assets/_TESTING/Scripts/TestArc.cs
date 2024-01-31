@@ -31,7 +31,15 @@ namespace TESTING
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (arc.isBuilding)
+                {
+                    if (!arc.speedUp)
+                        arc.speedUp = true;
+                    else
+                }
                 arc.Build(lines[Random.Range(0, lines.Length)]);
+            }
             else if (Input.GetKeyDown(KeyCode.A))
             {
                 arc.Append(lines[Random.Range(0, lines.Length)]);
