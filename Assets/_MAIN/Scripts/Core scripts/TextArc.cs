@@ -97,9 +97,27 @@ public class TextArc
 
     }
 
+    //when complete
     private void Oncomplete()
     {
         buildProcess = null;
+        speedUp = false;
+    }
+
+    //force to complete - varies based on type
+    public void ForceComplete()
+    {
+        switch (buildMethod)
+        {
+            case BuildMethod.typewriter:
+                tMPro.maxVisibleCharacters = tMPro.textInfo.characterCount;
+                break;
+            case BuildMethod.fade:
+                break;
+        }
+
+        Stop();
+        Oncomplete();
     }
 
     //prepare based on build method
