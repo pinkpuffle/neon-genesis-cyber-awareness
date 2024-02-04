@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TestFiles : MonoBehaviour
 {
-    private string fileName = "testFile";
+    [SerializeField] private TextAsset fileName;
 
 
     // Start is called before the first frame update
