@@ -34,7 +34,7 @@ public class FileManager
     public static List<string> ReadTxtAsset(string filePath, bool includeBlankLines = true) //reference within resources
     {
         TextAsset asset = Resources.Load<TextAsset>(filePath);
-        if(asset = null) //if no asset
+        if(asset == null) //if no asset
         {
             Debug.LogError($"Asset not found: '{filePath}'");
             return null;
