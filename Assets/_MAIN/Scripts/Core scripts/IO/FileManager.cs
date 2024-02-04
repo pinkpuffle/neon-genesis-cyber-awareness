@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FileManager : MonoBehaviour
+public class FileManager
 {
-    // Start is called before the first frame update
-    void Start()
+    public static List<string> ReadTxtFile(string filePath, bool includeBlankLines = true) //reference absolute path
     {
-        
+        return null;
     }
 
-    // Update is called once per frame
-    void Update()
+    public static List<string> ReadTxtAsset(string filePath, bool includeBlankLines = true) //reference within resources
     {
-        
+        return null;
     }
 }
