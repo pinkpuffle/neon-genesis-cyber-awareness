@@ -20,7 +20,7 @@ public class FileManager
             Debug.LogError($"File not found: '{ex.FileName}'");
         }
 
-        return lunesl
+        return lines;
     }
 
     public static List<string> ReadTxtAsset(string filePath, bool includeBlankLines = true) //reference within resources
