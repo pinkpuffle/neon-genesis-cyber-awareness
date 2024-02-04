@@ -33,6 +33,29 @@ public class FileManager
 
     public static List<string> ReadTxtAsset(string filePath, bool includeBlankLines = true) //reference within resources
     {
-        return null;
+        TextAsset asset = Resources.Load<TextAsset>(filePath);
+        if(asset = null) //if no asset
+        {
+            Debug.LogError($"Asset not found: '{filePath}'");
+            return null;
+        }
+
+        return ReadTxtAsset(asset, includeBlankLines);
+    }
+
+    public static List<string> ReadTxtAsset(TextAsset asset, bool includeBlankLines = true)
+    {
+        List<string> lines = new List<string>();
+        using (StringReader sr = new StringReader(asset.text))
+        {
+            while(sr.Peek() > -1) //until end of file
+            {
+                string line = sr.ReadLine();
+                if (includeBlankLines || !string.IsNullOrWhiteSpace(line))
+                    lines.Add(line);
+            }
+        }
+
+        return lines;
     }
 }
