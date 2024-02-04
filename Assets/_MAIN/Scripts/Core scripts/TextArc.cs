@@ -176,7 +176,7 @@ public class TextArc
         }
     }
 
-    private IEnumerator BuildFade()
+    private IEnumerator BuildFade() //develop if have time
     {
         yield return null;
     }
