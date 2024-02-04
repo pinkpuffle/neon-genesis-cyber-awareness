@@ -13,7 +13,15 @@ public class FileManager
         List<string> lines = new List<string>();
         try
         {
-
+            using(StreamReader sr = new StreamReader(filePath))
+            {
+                while(!sr.EndOfStream) //still lines to read
+                {
+                    string line = sr.ReadLine();
+                    if (includeBlankLines || !string.IsNullOrWhiteSpace(line))
+                        lines.Add(line);
+                }
+            }
         }
         catch(FileNotFoundException ex)
         {
