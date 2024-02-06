@@ -63,7 +63,10 @@ namespace DIALOGUE
             if (dialogueStart != -1 && dialogueEnd != -1 && (commandStart == -1 || commandStart > dialogueEnd)) //if found dialogue AND no command or the start of command is greater than end = dialogue
             {
                 //valid dialogue
-
+                speaker = rawLine.Substring(0, dialogueStart).Trim();
+                dialogue = rawLine.Substring(dialogueStart + 1, dialogueEnd - dialogueStart - 1).Replace("\\\"","\""); //bypass quotation mark, replace \ with "
+                if (commandStart != -1) //commands
+                    commands = rawLine.Substring(commandStart).Trim();
             }
             else if (commandStart != -1 && dialogueStart > commandStart) //command line
                 commands = rawLine;
