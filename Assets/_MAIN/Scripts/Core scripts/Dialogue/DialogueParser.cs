@@ -14,7 +14,7 @@ namespace DIALOGUE
         //command pattern
         private const string commandRegexPattern = "\\w*[^\\s]\\("; //word of any length as long as not proceeded by white space
 
-        public static DialogueLine Prase(string rawLine)
+        public static DialogueLine Parse(string rawLine)
         {
             Debug.Log($"Parsing line: '{rawLine}'");
 
