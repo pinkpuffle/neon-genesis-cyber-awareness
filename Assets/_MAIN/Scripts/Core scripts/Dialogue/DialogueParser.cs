@@ -39,7 +39,7 @@ namespace DIALOGUE
                     isEscaped = false;
             }
 
-            Debug.Log(rawLine.Substring(dialogueStart + 1, dialogueEnd - dialogueStart));
+            Debug.Log(rawLine.Substring(dialogueStart + 1, (dialogueEnd - dialogueStart) - 1));
 
 
 
