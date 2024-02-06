@@ -58,7 +58,9 @@ namespace DIALOGUE
             if (match.Success)
             {
                 commandStart = match.Index;
-                return ("", "", rawLine.Trim()); //return empty speaker + dialogue, just command
+
+                if(dialogueStart == -1 && dialogueEnd == -1) //no dialogue, only command
+                    return ("", "", rawLine.Trim()); //return just command
             }
 
             //if here, have dialogue or multi word argument in command. FIgure out if dialogue
