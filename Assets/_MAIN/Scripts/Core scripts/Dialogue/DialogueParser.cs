@@ -39,6 +39,8 @@ namespace DIALOGUE
                     isEscaped = false;
             }
 
+            Debug.Log(rawLine.Substring(dialogueStart + 1, dialogueEnd - dialogueStart));
+
 
 
             return (speaker, dialogue, commands);
