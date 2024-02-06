@@ -8,6 +8,9 @@ namespace DIALOGUE
     public class DialogueParser
     {
 
+        //dialogue line format
+        //{n{as cn}{ at x{:y}}{ [l:e{ + l:e}]} "d"} {c(a){, c(a)}}
+
         //command pattern
         private const string commandRegexPattern = "\\w*[^\\s]\\("; //word of any length as long as not proceeded by white space
 
@@ -55,6 +58,18 @@ namespace DIALOGUE
                 commandStart = match.Index;
                 return ("", "", rawLine.Trim()); //return empty speaker + dialogue, just command
             }
+
+            //if here, have dialogue or multi word argument in command. FIgure out if dialogue
+            if (dialogueStart != -1 && dialogueEnd != -1 && (commandStart == -1 || commandStart > dialogueEnd)) //if found dialogue AND no command or the start of command is greater than end = dialogue
+            {
+                //valid dialogue
+
+            }
+            else if (commandStart != -1 && dialogueStart > commandStart) //command line
+                commands = rawLine;
+            else //just a speaker
+                speaker = rawLine;
+
 
 
             return (speaker, dialogue, commands);
