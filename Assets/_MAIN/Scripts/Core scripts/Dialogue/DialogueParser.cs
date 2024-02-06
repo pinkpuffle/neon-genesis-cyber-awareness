@@ -5,18 +5,8 @@ using UnityEngine;
 namespace DIALOGUE
 {
 
-    public class DialogueParser : MonoBehaviour
+    public class DialogueParser
     {
-        // Start is called before the first frame update
-        void Start()
-        {
 
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
     }
 }
