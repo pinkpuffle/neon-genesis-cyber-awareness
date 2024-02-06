@@ -10,9 +10,9 @@ namespace DIALOGUE
         {
             Debug.Log($"Parsing line: '{rawLine}'");
 
+            (string speaker, string dialogue, string commands) = RipContent(rawLine);
 
-
-            return null;
+            return new DialogueLine(speaker, dialogue, commands);
         }
 
         private static (string, string, string) RipContent(string rawLine)
