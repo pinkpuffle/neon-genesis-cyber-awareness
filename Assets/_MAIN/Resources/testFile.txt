@@ -1,5 +1,7 @@
-Person1 "Hello there."
+Person1 "Hello there." list(items -f long), playSong("First Song" -v 1)
 
-Person2 "Hey what's up?"
+setScene("Workplace" -s 5.5)
 
-Person1 "Not much."
+Person2 "Hey what's up? \"Quote here\" You are my friend."
+
+Person1 "Not much." PlaySong(End, -p 0.5), list(players), saveGame(1 -g all -f simple)
