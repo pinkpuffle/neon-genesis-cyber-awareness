@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DIALOGUE;
 
 namespace testing {
     public class TestParsing : MonoBehaviour
@@ -9,6 +10,8 @@ namespace testing {
         void Start()
         {
             string line = "Speaker \"Dialogue goes in here\"";
+
+            DialogueParser.Prase(line);
         }
 
         // Update is called once per frame
