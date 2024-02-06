@@ -9,7 +9,7 @@ namespace testing {
         // Start is called before the first frame update
         void Start()
         {
-            string line = "Speaker \"Dialogue goes in here\"";
+            string line = "Speaker \"Dialogue goes in here\" Command(arguments here)";
 
             DialogueParser.Prase(line);
         }
