@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 namespace DIALOGUE
 {
     public class DialogueParser
     {
+
+        //command pattern
+        private const string commandRegexPattern = "\\w*[^\\s]\\("; //word of any length as long as not proceeded by white space
+
         public static DialogueLine Prase(string rawLine)
         {
             Debug.Log($"Parsing line: '{rawLine}'");
@@ -39,8 +44,17 @@ namespace DIALOGUE
                     isEscaped = false;
             }
 
-            Debug.Log(rawLine.Substring(dialogueStart + 1, (dialogueEnd - dialogueStart) - 1));
+            //Debug.Log(rawLine.Substring(dialogueStart + 1, (dialogueEnd - dialogueStart) - 1));
 
+            //identify command
+            Regex commandRegex = new Regex(commandRegexPattern);
+            Match match = commandRegex.Match(rawLine);
+            int commandStart = -1;
+            if (match.Success)
+            {
+                commandStart = match.Index;
+                return ("", "", rawLine.Trim()); //return empty speaker + dialogue, just command
+            }
 
 
             return (speaker, dialogue, commands);
