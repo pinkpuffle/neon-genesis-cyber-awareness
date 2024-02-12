@@ -12,6 +12,7 @@ namespace DIALOGUE
 
         public static DialogueSys instance; //singleton
 
+        public bool isRunningConversation => conversationManager.isRunning;
         private void Awake()
         {
             if (instance == null)
@@ -20,14 +21,14 @@ namespace DIALOGUE
                 DestroyImmediate(gameObject);
         }
 
-        // Start is called before the first frame update
-        void Start()
+        //list of strings to say
+        public void Say(string speaker, string dialogue) 
         {
-
+            List<string> conversation = new List<string>() { $"{speaker} \"{dialogue}\"" };
+            Say(conversation);
         }
 
-        // Update is called once per frame
-        void Update()
+        public void Say(List<string> conversation) 
         {
 
         }
