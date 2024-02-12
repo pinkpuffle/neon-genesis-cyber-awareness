@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DIALOGUE
 {
-    public class ConversationManager : MonoBehaviour
+    public class ConversationManager
     {
         // Start is called before the first frame update
         void Start()
