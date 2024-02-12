@@ -7,7 +7,6 @@ namespace DIALOGUE
 {
     public class DialogueSys : MonoBehaviour
     {
-
         public DialogueCont dialogueCont = new DialogueCont();
         private ConversationManager conversationManager = new ConversationManager();
 
