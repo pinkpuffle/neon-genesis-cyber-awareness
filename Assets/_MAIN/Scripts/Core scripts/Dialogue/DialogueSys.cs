@@ -9,6 +9,7 @@ namespace DIALOGUE
     {
 
         public DialogueCont dialogueCont = new DialogueCont();
+        private ConversationManager conversationManager = new ConversationManager();
 
         public static DialogueSys instance; //singleton
 
