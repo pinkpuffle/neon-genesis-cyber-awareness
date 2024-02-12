@@ -30,7 +30,7 @@ namespace DIALOGUE
 
         public void Say(List<string> conversation) 
         {
-
+            conversationManager.StartConversation(conversation); //conversation to start
         }
     }
 }
