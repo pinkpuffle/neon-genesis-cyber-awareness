@@ -6,18 +6,18 @@ namespace DIALOGUE
 {
     public class ConversationManager
     {
-        public bool isRunning = false;
+        private Coroutine process = null;
+        public bool isRunning => process != null;
 
-        // Start is called before the first frame update
-        void Start()
+        public void StartConversation(List<string> conversation)
         {
 
         }
 
-        // Update is called once per frame
-        void Update()
+        IEnumerator RunningConversation()
         {
 
         }
+
     }
 }
