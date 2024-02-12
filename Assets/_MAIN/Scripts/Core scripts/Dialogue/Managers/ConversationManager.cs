@@ -14,7 +14,7 @@ namespace DIALOGUE
         {
             StopConversation();
 
-            
+            process = dialogueSys.StartCoroutine(RunningConversation(conversation));
         }
 
         public void StopConversation()
@@ -27,7 +27,7 @@ namespace DIALOGUE
 
         }
 
-        IEnumerator RunningConversation()
+        IEnumerator RunningConversation(List<string> conversation)
         {
 
         }
