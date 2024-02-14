@@ -35,7 +35,17 @@ namespace DIALOGUE
                     continue;
                 DialogueLine line = DialogueParser.Parse(conversation[i]); //get full line
 
-                if(line.dialogue != "")
+                if (line.hasDialogue) //show dialogue
+                {
+
+                }
+
+                if (line.hasCommands) //run commands
+                {
+
+                }
+
+                
             }
         }
 
