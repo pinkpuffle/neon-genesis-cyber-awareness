@@ -63,11 +63,15 @@ namespace DIALOGUE
             else
                 dialogueSys.HideSpeakerName();
 
-            yield return null;
+            //build dialogue
+            arc.Build(line.dialogue);
+            while (arc.isBuilding)
+                yield return null;
         }
 
         IEnumerator LineRunCommands(DialogueLine line)
         {
+            Debug.Log(line.commands); //to see if working
             yield return null;
         }
 
