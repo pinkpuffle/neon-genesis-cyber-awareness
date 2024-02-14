@@ -52,7 +52,7 @@ namespace DIALOGUE
 
         IEnumerator LineRunDialogue(DialogueLine line)
         {
-            if (line.hasSpeaker)
+            if (line.hasSpeaker) //show or hide speaker name if present
                 dialogueSys.ShowSpeakerName(line.speaker);
             else
                 dialogueSys.HideSpeakerName();
