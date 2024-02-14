@@ -29,7 +29,14 @@ namespace DIALOGUE
 
         IEnumerator RunningConversation(List<string> conversation)
         {
+            for(int i = -0; i < conversation.Count; i++) //don't show or run blank lines
+            {
+                if (conversation[i] == string.Empty)
+                    continue;
+                DialogueLine line = DialogueParser.Parse(conversation[i]); //get full line
 
+                if(line.dialogue != "")
+            }
         }
 
     }
