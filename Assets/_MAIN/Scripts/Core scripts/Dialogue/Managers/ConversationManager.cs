@@ -31,22 +31,33 @@ namespace DIALOGUE
         {
             for(int i = -0; i < conversation.Count; i++) //don't show or run blank lines
             {
-                if (conversation[i] == string.Empty)
+                if (string.IsNullOrWhiteSpace(conversation[i])) //account for empty and white spaces
                     continue;
+
                 DialogueLine line = DialogueParser.Parse(conversation[i]); //get full line
 
                 if (line.hasDialogue) //show dialogue
                 {
-
+                    yield return LineRunDialogue(line);
                 }
 
                 if (line.hasCommands) //run commands
                 {
-
+                    yield return LineRunCommands(line);
                 }
 
                 
             }
+        }
+
+        IEnumerator LineRunDialogue(DialogueLine line)
+        {
+            
+        }
+
+        IEnumerator LineRunCommands(DialogueLine line)
+        {
+
         }
 
     }
