@@ -32,6 +32,7 @@ namespace DIALOGUE
                 return;
 
             arc = new TextArc(dialogueCont.dialogueTxt);
+            conversationManager = new ConversationManager(arc);
         }
 
         public void ShowSpeakerName(string speakerName = "") => dialogueCont.nameContainer.Show(speakerName);
