@@ -21,6 +21,9 @@ namespace DIALOGUE
                 DestroyImmediate(gameObject);
         }
 
+        public void ShowSpeakerName(string speakerName = "") => dialogueCont.nameContainer.Show(speakerName);
+        public void HideSpeakerName() => dialogueCont.nameContainer.Hide();
+
         //list of strings to say
         public void Say(string speaker, string dialogue) 
         {
