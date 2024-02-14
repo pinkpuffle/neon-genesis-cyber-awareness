@@ -10,6 +10,12 @@ namespace DIALOGUE
         private Coroutine process = null;
         public bool isRunning => process != null;
 
+        private TextArc arc = null;
+        public ConversationManager(TextArc arc)
+        {
+            this.arc = arc;
+        }
+
         public void StartConversation(List<string> conversation)
         {
             StopConversation();
