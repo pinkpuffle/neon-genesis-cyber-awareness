@@ -9,7 +9,7 @@ namespace DIALOGUE
     {
         public DialogueCont dialogueCont = new DialogueCont();
         private ConversationManager conversationManager = new ConversationManager();
-        private TextArc architect;
+        private TextArc arc;
 
         public static DialogueSys instance; //singleton
 
@@ -30,6 +30,8 @@ namespace DIALOGUE
         {
             if (initialised)
                 return;
+
+            arc = new TextArc(dialogueCont.dialogueTxt);
         }
 
         public void ShowSpeakerName(string speakerName = "") => dialogueCont.nameContainer.Show(speakerName);
