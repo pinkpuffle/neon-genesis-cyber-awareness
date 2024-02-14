@@ -52,12 +52,12 @@ namespace DIALOGUE
 
         IEnumerator LineRunDialogue(DialogueLine line)
         {
-            
+            yield return null;
         }
 
         IEnumerator LineRunCommands(DialogueLine line)
         {
-
+            yield return null;
         }
 
     }
