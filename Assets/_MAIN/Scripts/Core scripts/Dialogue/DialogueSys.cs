@@ -8,7 +8,7 @@ namespace DIALOGUE
     public class DialogueSys : MonoBehaviour
     {
         public DialogueCont dialogueCont = new DialogueCont();
-        private ConversationManager conversationManager = new ConversationManager();
+        private ConversationManager conversationManager;
         private TextArc arc;
 
         public static DialogueSys instance; //singleton
