@@ -43,14 +43,12 @@ namespace DIALOGUE
                 DialogueLine line = DialogueParser.Parse(conversation[i]); //get full line
 
                 if (line.hasDialogue) //show dialogue
-                {
                     yield return LineRunDialogue(line);
-                }
 
                 if (line.hasCommands) //run commands
-                {
                     yield return LineRunCommands(line);
-                }
+
+                yield return new WaitForSeconds(1);
 
                 
             }
