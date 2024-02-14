@@ -3,24 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-/// <summary>
-///  box that holds name text on screen
-/// </summary>
-
-public class NameContainer : MonoBehaviour
+namespace DIALOGUE
 {
-    [SerializeField] private GameObject root;
-    [SerializeField] private TextMeshProUGUI nameTxt;
-    public void Show(string nameToShow = "")
-    {
-        root.SetActive(true);
+    [System.Serializable]
 
-        if (nameToShow != string.Empty)
-            nameTxt.text = nameToShow;
-    }
+    /// <summary>
+    ///  box that holds name text on screen
+    /// </summary>
 
-    public void Hide()
+    public class NameContainer
     {
-        root.SetActive(false);
+        [SerializeField] private GameObject root;
+        [SerializeField] private TextMeshProUGUI nameTxt;
+        public void Show(string nameToShow = "")
+        {
+            root.SetActive(true);
+
+            if (nameToShow != string.Empty)
+                nameTxt.text = nameToShow;
+        }
+
+        public void Hide()
+        {
+            root.SetActive(false);
+        }
     }
 }
