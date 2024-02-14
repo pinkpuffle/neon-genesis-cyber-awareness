@@ -9,6 +9,7 @@ namespace DIALOGUE
     {
         public DialogueCont dialogueCont = new DialogueCont();
         private ConversationManager conversationManager = new ConversationManager();
+        private TextArc architect;
 
         public static DialogueSys instance; //singleton
 
@@ -16,9 +17,19 @@ namespace DIALOGUE
         private void Awake()
         {
             if (instance == null)
+            {
                 instance = this;
+                Initialise();
+            }
             else
                 DestroyImmediate(gameObject);
+        }
+
+        bool initialised = false;
+        private void Initialise()
+        {
+            if (initialised)
+                return;
         }
 
         public void ShowSpeakerName(string speakerName = "") => dialogueCont.nameContainer.Show(speakerName);
