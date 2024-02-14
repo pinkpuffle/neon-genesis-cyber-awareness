@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 /// <summary>
 ///  box that holds name text on screen
@@ -8,13 +9,18 @@ using UnityEngine;
 
 public class NameContainer : MonoBehaviour
 {
-    public void Show()
+    [SerializeField] private GameObject root;
+    [SerializeField] private TextMeshProUGUI nameTxt;
+    public void Show(string nameToShow = "")
     {
+        root.SetActive(true);
 
+        if (nameToShow != string.Empty)
+            nameTxt.text = nameToShow;
     }
 
     public void Hide()
     {
-
+        root.SetActive(false);
     }
 }
