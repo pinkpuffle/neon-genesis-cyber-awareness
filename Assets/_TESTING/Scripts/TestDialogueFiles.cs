@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using DIALOGUE;
 
-public class TestConversation : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartConversation();
-    }
+namespace testing {
 
-    void StartConversation()
+    public class TestConversation : MonoBehaviour
     {
-        List<string> lines = FileManager.ReadTxtAsset("testFile");
+        // Start is called before the first frame update
+        void Start()
+        {
+            StartConversation();
+        }
 
-        DialogueSys.instance.Say(lines);
+        void StartConversation()
+        {
+            List<string> lines = FileManager.ReadTxtAsset("testFile");
+
+            DialogueSys.instance.Say(lines);
+        }
     }
-}
 }
