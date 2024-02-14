@@ -52,6 +52,11 @@ namespace DIALOGUE
 
         IEnumerator LineRunDialogue(DialogueLine line)
         {
+            if (line.hasSpeaker)
+                dialogueSys.ShowSpeakerName(line.speaker);
+            else
+                dialogueSys.HideSpeakerName();
+
             yield return null;
         }
 
