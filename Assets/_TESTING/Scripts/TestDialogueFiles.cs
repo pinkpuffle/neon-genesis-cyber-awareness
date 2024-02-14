@@ -15,12 +15,7 @@ public class TestConversation : MonoBehaviour
     {
         List<string> lines = FileManager.ReadTxtAsset("testFile");
 
-        foreach (string line in lines)
-        {
-            if (line == string.Empty) //skip blank lines
-                continue;
-            DialogueLine dl = DialogueParser.Parse(line); //parse each line, send to console
-        }
+        DialogueSys.instance.Say(lines);
     }
 }
 }
