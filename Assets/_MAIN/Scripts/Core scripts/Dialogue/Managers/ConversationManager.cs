@@ -98,7 +98,10 @@ namespace DIALOGUE
 
         IEnumerator WaitForUserInput()
         {
-            
+            while (!userPrompt)
+                yield return null;
+
+            userPrompt = false;
         }
 
     }
