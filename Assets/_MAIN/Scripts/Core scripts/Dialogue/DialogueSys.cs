@@ -13,6 +13,9 @@ namespace DIALOGUE
 
         public static DialogueSys instance; //singleton
 
+        public delegate void DialogueSystemEvent();
+        public event DialogueSystemEvent onUserPromptNext;
+
         public bool isRunningConversation => conversationManager.isRunning;
         private void Awake()
         {
@@ -35,7 +38,18 @@ namespace DIALOGUE
             conversationManager = new ConversationManager(arc);
         }
 
-        public void ShowSpeakerName(string speakerName = "") => dialogueCont.nameContainer.Show(speakerName);
+        public void OnUserPromptNext()
+        {
+            onUserPromptNext?.Invoke();
+        }
+
+        public void ShowSpeakerName(string speakerName = "")
+        {
+            if (speakerName.ToLower() != "narrator") //ensure narrator name not output
+                dialogueCont.nameContainer.Show(speakerName);
+            else
+                HideSpeakerName();
+        }
         public void HideSpeakerName() => dialogueCont.nameContainer.Hide();
 
         //list of strings to say
