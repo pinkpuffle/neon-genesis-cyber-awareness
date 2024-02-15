@@ -35,7 +35,7 @@ namespace DIALOGUE
 
         IEnumerator RunningConversation(List<string> conversation)
         {
-            for(int i = -0; i < conversation.Count; i++) //don't show or run blank lines
+            for(int i = 0; i < conversation.Count; i++) //don't show or run blank lines
             {
                 if (string.IsNullOrWhiteSpace(conversation[i])) //account for empty and white spaces
                     continue;
