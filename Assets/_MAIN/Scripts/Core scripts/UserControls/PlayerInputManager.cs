@@ -15,7 +15,8 @@ namespace DIALOGUE
         // Update is called once per frame
         void Update()
         {
-
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return)) //on space and enter
+                PromptAdvance();
         }
 
         public void PromptAdvance()
