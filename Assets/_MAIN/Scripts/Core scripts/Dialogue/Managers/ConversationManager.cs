@@ -42,7 +42,7 @@ namespace DIALOGUE
 
         IEnumerator RunningConversation(List<string> conversation)
         {
-            for(int i = 0; i < conversation.Count; i++) //don't show or run blank lines
+            for (int i = 0; i < conversation.Count; i++) //don't show or run blank lines
             {
                 if (string.IsNullOrWhiteSpace(conversation[i])) //account for empty and white spaces
                     continue;
@@ -57,7 +57,7 @@ namespace DIALOGUE
 
                 yield return new WaitForSeconds(1);
 
-                
+
             }
         }
 
@@ -69,9 +69,8 @@ namespace DIALOGUE
                 dialogueSys.HideSpeakerName();
 
             //build dialogue
-            arc.Build(line.dialogue);
-            while (arc.isBuilding)
-                yield return null;
+            yield return BuildDialogue(line.dialogue);
+
         }
 
         IEnumerator LineRunCommands(DialogueLine line)
@@ -80,5 +79,23 @@ namespace DIALOGUE
             yield return null;
         }
 
+        IEnumerator BuildDialogue(string dialogue)
+        {
+            arc.Build(dialogue);
+            while (arc.isBuilding)
+            {
+                if (userPrompt)
+                {
+                    if (!arc.speedUp)
+                        arc.speedUp = true;
+                    else
+                        arc.ForceComplete();
+
+                    userPrompt = false;
+                }
+                yield return null;
+
+            }
+        }
     }
 }
