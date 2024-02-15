@@ -11,9 +11,16 @@ namespace DIALOGUE
         public bool isRunning => process != null;
 
         private TextArc arc = null;
+        private bool userPrompt = false;
         public ConversationManager(TextArc arc)
         {
             this.arc = arc;
+            dialogueSys.onUserPromptNext += OnUserPromptNext;
+        }
+
+        private void OnUserPromptNext()
+        {
+            userPrompt = true;
         }
 
         public void StartConversation(List<string> conversation)
