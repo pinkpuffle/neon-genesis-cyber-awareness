@@ -54,10 +54,6 @@ namespace DIALOGUE
 
                 if (line.hasCommands) //run commands
                     yield return LineRunCommands(line);
-
-                yield return new WaitForSeconds(1);
-
-
             }
         }
 
@@ -71,6 +67,8 @@ namespace DIALOGUE
             //build dialogue
             yield return BuildDialogue(line.dialogue);
 
+            //wait for user input
+            yield return WaitForUserInput();
         }
 
         IEnumerator LineRunCommands(DialogueLine line)
@@ -97,5 +95,11 @@ namespace DIALOGUE
 
             }
         }
+
+        IEnumerator WaitForUserInput()
+        {
+            
+        }
+
     }
 }
