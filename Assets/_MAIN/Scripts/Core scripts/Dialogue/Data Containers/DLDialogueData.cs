@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class DLDialogueData
 {
+
+    public List<DialogueSegment> segments;
     public DLDialogueData(string rawDialogue)
+    {
+        segments = RipSegments(rawDialogue);
+    }
+
+    public List<DialogueSegment> RipSegments(string rawDialogue)
     {
 
     }
