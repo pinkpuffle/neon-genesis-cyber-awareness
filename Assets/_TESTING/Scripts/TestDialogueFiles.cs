@@ -20,6 +20,9 @@ namespace testing {
 
             foreach(string line in lines)
             {
+                if (string.IsNullOrEmpty(line))
+                    continue;
+
                 Debug.Log($"Segmenting line '{line}'");
                 DialogueLine dlLine = DialogueParser.Parse(line);
 
