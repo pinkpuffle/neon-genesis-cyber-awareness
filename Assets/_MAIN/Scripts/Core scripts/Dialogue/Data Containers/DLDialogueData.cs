@@ -42,7 +42,7 @@ public class DLDialogueData
             signalMatch = signalMatch.Substring(1, match.Length - 2); //just contents
             string[] signalSplit = signalMatch.Split(' '); //remove any space
 
-            segment.startSignal = (DialogueSegment.StartSignal) Enum.Parse(typeof(DialogueSegment.StartSignal), signalSplit[0]);
+            segment.startSignal = (DialogueSegment.StartSignal) Enum.Parse(typeof(DialogueSegment.StartSignal), signalSplit[0].ToUpper());
 
             //get signal delay
             if (signalSplit.Length > 1)
