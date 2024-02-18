@@ -41,6 +41,10 @@ public class DLDialogueData
             string[] signalSplit = signalMatch.Split(' '); //remove any space
 
             segment.startSignal = (DialogueSegment.StartSignal) Enum.Parse(typeof(DialogueSegment.StartSignal), signalSplit[0]);
+
+            //get signal delay
+            if (signalSplit.Length > 1)
+                float.TryParse(signalSplit[1], out segment.signalDelay);
         }
     }
 
