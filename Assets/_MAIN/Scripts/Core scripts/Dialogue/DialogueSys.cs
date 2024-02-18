@@ -11,7 +11,7 @@ namespace DIALOGUE
         private ConversationManager conversationManager;
         private TextArc arc;
 
-        public static DialogueSys instance; //singleton
+        public static DialogueSys instance { get; private set; } //singleton
 
         public delegate void DialogueSystemEvent();
         public event DialogueSystemEvent onUserPromptNext;
