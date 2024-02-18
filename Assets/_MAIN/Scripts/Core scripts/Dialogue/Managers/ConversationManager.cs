@@ -61,8 +61,7 @@ namespace DIALOGUE
         {
             if (line.hasSpeaker) //show or hide speaker name if present
                 dialogueSys.ShowSpeakerName(line.speaker);
-            else
-                dialogueSys.HideSpeakerName();
+
 
             //build dialogue
             yield return BuildDialogue(line.dialogue);
