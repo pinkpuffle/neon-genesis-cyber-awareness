@@ -12,7 +12,7 @@ namespace DIALOGUE
         public string commands;
 
         public bool hasSpeaker => speaker != string.Empty;
-        public bool hasDialogue => false; //dialogue != string.Empty;
+        public bool hasDialogue => dialogue.hasDialogue;
         public bool hasCommands => commands != string.Empty;
 
         public DialogueLine(string speaker, string dialogue, string commands)
