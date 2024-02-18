@@ -65,5 +65,7 @@ public class DLDialogueData
         public float signalDelay;
 
         public enum StartSignal { NONE, C, A, WA, WC } //none, clear, append, wait and append, wait and clear
+
+        public bool appendText => (startSignal == StartSignal.A || startSignal == StartSignal.WA);
     }
 }

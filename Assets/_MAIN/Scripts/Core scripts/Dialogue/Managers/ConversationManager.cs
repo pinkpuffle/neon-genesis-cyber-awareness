@@ -82,6 +82,8 @@ namespace DIALOGUE
                 DLDialogueData.DialogueSegment segment = line.segments[i];
 
                 yield return WaitForDialogueSegmentSignalToBeTriggered(segment);
+
+                yield return BuildDialogue(segment.dialogue,);
             }
         }
 
@@ -103,9 +105,15 @@ namespace DIALOGUE
             }
         }
 
-        IEnumerator BuildDialogue(string dialogue)
+        IEnumerator BuildDialogue(string dialogue, bool append = false)
         {
-            arc.Build(dialogue);
+            //build dialogue
+            if (!append)
+                arc.Build(dialogue);
+            else
+                arc.Append(dialogue);
+
+            //wait for dialogue to complete
             while (arc.isBuilding)
             {
                 if (userPrompt)
