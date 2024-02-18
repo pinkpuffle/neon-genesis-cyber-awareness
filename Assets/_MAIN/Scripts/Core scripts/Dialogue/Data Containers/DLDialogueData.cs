@@ -45,7 +45,15 @@ public class DLDialogueData
             //get signal delay
             if (signalSplit.Length > 1)
                 float.TryParse(signalSplit[1], out segment.signalDelay);
+
+            //get dialogue for segment
+            int nextIndex = i + 1 < matches.Count ? matches[i + 1].Index : rawDialogue.Length; //if at end of matches
+            segment.dialogue = rawDialogue.Substring(lastIndex + match.Length, nextIndex - (lastIndex + match.Length));
+            lastIndex = nextIndex;
+
+            segments.Add(segment);
         }
+        return segments;
     }
 
     public struct DialogueSegment
