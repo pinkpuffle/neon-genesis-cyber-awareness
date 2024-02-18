@@ -30,6 +30,16 @@ public class DLDialogueData
             return segments;
         else
             lastIndex = matches[0].Index;
+
+        for(int i = 0; i < matches.Count; i++)
+        {
+            Match match = matches[i];
+            segment = new DialogueSegment();
+
+            string signalMatch = match.Value; //grab identifier and container
+            signalMatch = signalMatch.Substring(1, match.Length - 2); //just contents
+            string[] signalSplit = signalMatch.Split(' '); //remove any space
+        }
     }
 
     public struct DialogueSegment
