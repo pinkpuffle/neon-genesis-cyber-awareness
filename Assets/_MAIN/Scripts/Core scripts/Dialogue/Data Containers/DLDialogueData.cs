@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Text.RegularExpressions;
+using System;
 
 public class DLDialogueData
 {
@@ -36,9 +35,12 @@ public class DLDialogueData
             Match match = matches[i];
             segment = new DialogueSegment();
 
+            //get start signal for segment
             string signalMatch = match.Value; //grab identifier and container
             signalMatch = signalMatch.Substring(1, match.Length - 2); //just contents
             string[] signalSplit = signalMatch.Split(' '); //remove any space
+
+            segment.startSignal = (DialogueSegment.StartSignal) Enum.Parse(typeof(DialogueSegment.StartSignal), signalSplit[0]);
         }
     }
 
