@@ -63,7 +63,7 @@ namespace DIALOGUE
                 dialogueSys.ShowSpeakerName(line.speaker);
 
             //build dialogue
-            yield return BuildDialogue(line.dialogue);
+            yield return BuildLineSegments(line.dialogue);
 
             //wait for user input
             yield return WaitForUserInput();
@@ -73,6 +73,21 @@ namespace DIALOGUE
         {
             Debug.Log(line.commands); //to see if working
             yield return null;
+        }
+
+        IEnumerator BuildLineSegments(DLDialogueData line)
+        {
+            for(int i = 0; i < line.segments.Count; i++)
+            {
+                DLDialogueData.DialogueSegment segment = line.segments[i];
+
+                yield return WaitForDialogueSegmentSignalToBeTriggered(segment);
+            }
+        }
+
+        IEnumerator WaitForDialogueSegmentSignalToBeTriggered(DLDialogueData.DialogueSegment segment)
+        {
+
         }
 
         IEnumerator BuildDialogue(string dialogue)
