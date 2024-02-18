@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class DLDialogueData
 {
@@ -14,7 +15,7 @@ public class DLDialogueData
 
     public List<DialogueSegment> RipSegments(string rawDialogue)
     {
-
+        MatchCollection matches = Regex.Matches(rawDialogue, segmentIDPattern);
     }
 
     public struct DialogueSegment
