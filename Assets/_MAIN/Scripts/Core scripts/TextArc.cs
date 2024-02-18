@@ -94,6 +94,8 @@ public class TextArc
                 break;
         }
 
+        Oncomplete();
+
 
     }
 
