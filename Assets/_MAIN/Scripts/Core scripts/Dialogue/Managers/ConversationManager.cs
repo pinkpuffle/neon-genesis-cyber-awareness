@@ -87,7 +87,20 @@ namespace DIALOGUE
 
         IEnumerator WaitForDialogueSegmentSignalToBeTriggered(DLDialogueData.DialogueSegment segment)
         {
+            switch (segment.startSignal)
+            {
+                case DLDialogueData.DialogueSegment.StartSignal.C:
+                case DLDialogueData.DialogueSegment.StartSignal.A:
+                    yield return WaitForUserInput();
+                    break;
+                case DLDialogueData.DialogueSegment.StartSignal.WC:
+                case DLDialogueData.DialogueSegment.StartSignal.WA:
+                    yield return new WaitForSeconds(segment.signalDelay);
+                    break;
+                default:
+                    break;
 
+            }
         }
 
         IEnumerator BuildDialogue(string dialogue)
