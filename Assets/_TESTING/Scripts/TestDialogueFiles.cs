@@ -7,6 +7,7 @@ namespace testing {
 
     public class TestConversation : MonoBehaviour
     {
+        [SerializeField] private TextAsset fileToRead = null;
         // Start is called before the first frame update
         void Start()
         {
@@ -15,7 +16,7 @@ namespace testing {
 
         void StartConversation()
         {
-            List<string> lines = FileManager.ReadTxtAsset("testFile");
+            List<string> lines = FileManager.ReadTxtAsset(fileToRead);
 
             DialogueSys.instance.Say(lines);
         }
