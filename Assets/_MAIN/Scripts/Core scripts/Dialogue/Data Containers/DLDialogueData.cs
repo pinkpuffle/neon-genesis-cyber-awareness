@@ -15,7 +15,21 @@ public class DLDialogueData
 
     public List<DialogueSegment> RipSegments(string rawDialogue)
     {
+        List<DialogueSegment> segments =  new List<DialogueSegment>();
         MatchCollection matches = Regex.Matches(rawDialogue, segmentIDPattern);
+
+        int lastIndex = 0;
+        //find first or only segment in file
+        DialogueSegment segment = new DialogueSegment();
+        segment.dialogue = (matches.Count == 0 ? rawDialogue : rawDialogue.Substring(0, matches[0].Index));
+        segment.startSignal = DialogueSegment.StartSignal.NONE;
+        segment.signalDelay = 0;
+        segments.Add(segment);
+
+        if (matches.Count == 0) //if no matches
+            return segments;
+        else
+            lastIndex = matches[0].Index;
     }
 
     public struct DialogueSegment
