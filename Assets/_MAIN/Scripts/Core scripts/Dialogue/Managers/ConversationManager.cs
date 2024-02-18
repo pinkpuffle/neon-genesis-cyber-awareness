@@ -83,7 +83,7 @@ namespace DIALOGUE
 
                 yield return WaitForDialogueSegmentSignalToBeTriggered(segment);
 
-                yield return BuildDialogue(segment.dialogue,);
+                yield return BuildDialogue(segment.dialogue, segment.appendText);
             }
         }
 
