@@ -20,7 +20,7 @@ namespace testing {
 
             for(int i = 0; i < lines.Count; i++) //print out everything
             {
-                string line = lines[0];
+                string line = lines[i];
 
                 if (string.IsNullOrWhiteSpace(line))
                     continue;
