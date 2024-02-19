@@ -60,7 +60,7 @@ namespace DIALOGUE
         IEnumerator LineRunDialogue(DialogueLine line)
         {
             if (line.hasSpeaker) //show or hide speaker name if present
-                dialogueSys.ShowSpeakerName(line.speaker);
+                dialogueSys.ShowSpeakerName(line.speaker.displayName);
 
             //build dialogue
             yield return BuildLineSegments(line.dialogue);
