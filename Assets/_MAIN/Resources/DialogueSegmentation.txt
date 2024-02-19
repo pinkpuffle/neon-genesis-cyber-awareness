@@ -1,16 +1,10 @@
 
 
 
-Detective "This changes some things.{a} So true. Changes."
+Elen as ??? "Hello there"
 
-David Bowie: "Hello I'm David Bowie."
+Elen as ??? at 1:0 "Hello there"
 
-Detective: "Holy shit it's David Bowie.{c}I'm a big fan...{wa 1} I own all of the albums. Every one."
+Elen at 0.5:0.5 as The Girl "Hello there"
 
-David Bowie: "Yes thank you, it is indeed me.{c}I am back."
-
-Detective: "Wow just wait until all my friends here about this...{wa 1} They simply will not believe me."
-
-David Bowie: "This truly is the greatest fan fiction {wc 1} of all time."
-
-Detective: "So true bestie."
+Elen as ??? [0:Angel, 1:happy] at 0 "Hello there"
