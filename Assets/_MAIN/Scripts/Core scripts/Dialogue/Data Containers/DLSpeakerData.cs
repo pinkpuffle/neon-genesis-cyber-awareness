@@ -6,6 +6,7 @@ using System.Linq;
 public class DLSpeakerData
 {
     public string name, castName;
+    public string displayName => (castName != string.Empty ? castName : name);
     public Vector2 castPosition;
     public List<(int layer, string expression)> CastExpressions { get; set; }
 
