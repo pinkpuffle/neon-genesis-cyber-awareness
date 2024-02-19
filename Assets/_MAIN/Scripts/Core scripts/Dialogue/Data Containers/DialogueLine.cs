@@ -17,7 +17,7 @@ namespace DIALOGUE
 
         public DialogueLine(string speaker, string dialogue, string commands)
         {
-            this.speaker = speaker;
+            this.speaker = new DLSpeakerData(speaker);
             this.dialogue = new DLDialogueData(dialogue);
             this.commands = commands;
         }
