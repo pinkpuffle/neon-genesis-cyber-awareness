@@ -11,12 +11,12 @@ public class DLSpeakerData
 
     private const string nameCastID = " as ";
     private const string positionCastID = " at ";
-    private const string expressionCastID = @" \[";
+    private const string expressionCastID = " [";
     private const char axisDelimiterID = ':';
 
     public DLSpeakerData(string rawSpeaker)
     {
-        string pattern = @$"{nameCastID}|{positionCastID}|{expressionCastID}";
+        string pattern = @$"{nameCastID}|{positionCastID}|{expressionCastID.Insert(expressionCastID.Length - 1, @"\")}";
         MatchCollection matches = Regex.Matches(rawSpeaker, pattern);
 
         //populate to avoid null values
@@ -57,6 +57,10 @@ public class DLSpeakerData
 
                 if (axis.Length > 1)
                     float.TryParse(axis[1], out castPosition.y);
+            }
+            else if(match.Value == expressionCastID)
+            {
+
             }
         }
 
