@@ -6,7 +6,7 @@ using System.Linq;
 public class DLSpeakerData
 {
     public string name, castName;
-    public string displayName => (castName != string.Empty ? castName : name);
+    public string displayName => (castName != string.Empty ? castName : name); //name that will display in dialogue box
     public Vector2 castPosition;
     public List<(int layer, string expression)> CastExpressions { get; set; }
 
@@ -42,13 +42,13 @@ public class DLSpeakerData
             Match match = matches[i];
             int startIndex = 0, endIndex = 0;
 
-            if(match.Value == nameCastID)
+            if(match.Value == nameCastID) // " as "
             {
                 startIndex = match.Index + nameCastID.Length;
                 endIndex = (i < matches.Count - 1) ? matches[i + 1].Index : rawSpeaker.Length;
                 castName = rawSpeaker.Substring(startIndex, endIndex - startIndex);
             }
-            else if(match.Value == positionCastID)
+            else if(match.Value == positionCastID) //" at "
             {
                 startIndex = match.Index + positionCastID.Length;
                 endIndex = (i < matches.Count - 1) ? matches[i + 1].Index : rawSpeaker.Length;
@@ -61,7 +61,7 @@ public class DLSpeakerData
                 if (axis.Length > 1)
                     float.TryParse(axis[1], out castPosition.y);
             }
-            else if(match.Value == expressionCastID)
+            else if(match.Value == expressionCastID) //" ["
             {
                 startIndex = match.Index + expressionCastID.Length;
                 endIndex = (i < matches.Count - 1) ? matches[i + 1].Index : rawSpeaker.Length;
