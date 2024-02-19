@@ -18,13 +18,34 @@ namespace testing {
         {
             List<string> lines = FileManager.ReadTxtAsset(fileToRead);
 
-            DialogueSys.instance.Say(lines);
+            for(int i = 0; i < lines.Count; i++) //print out everything
+            {
+                string line = lines[0];
+                DialogueLine dl = DialogueParser.Parse(line);
+
+                Debug.Log($"{dl.speaker.name} as [{(dl.speaker.castName != string.Empty ? dl.speaker.castName : dl.speaker.name)}]at {dl.speaker.castPosition}");
+
+                List<(int l, string ex)> expr = dl.speaker.CastExpressions;
+                for(int c = 0; c < expr.Count; c++)
+                {
+                    Debug.Log($"[Layer[{expr[c].l}] = '{expr[c].ex}']");
+                }
+            }
+
+
+
+
+
+
+
+
+
+
+
+            //DialogueSys.instance.Say(lines);
             
             
-            
-            
-            
-            
+
             
             //foreach(string line in lines)
             //{
