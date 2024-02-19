@@ -7,11 +7,11 @@ namespace DIALOGUE
 
     public class DialogueLine
     {
-        public string speaker;
+        public DLSpeakerData speaker;
         public DLDialogueData dialogue;
         public string commands;
 
-        public bool hasSpeaker => speaker != string.Empty;
+        public bool hasSpeaker => false; // speaker != string.Empty;
         public bool hasDialogue => dialogue.hasDialogue;
         public bool hasCommands => commands != string.Empty;
 
