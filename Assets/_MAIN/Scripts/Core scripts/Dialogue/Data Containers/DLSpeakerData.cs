@@ -12,7 +12,9 @@ public class DLSpeakerData
     private const string nameCastID = " as ";
     private const string positionCastID = " at ";
     private const string expressionCastID = " [";
-    private const char axisDelimiterID = ':';
+    private const char axisDelimiter = ':';
+    private const char expressionLayerJoiner = ','; //joins expression casting 
+    private const char expressionLayerDelimiter = ':'; //separate layer from expression
 
     public DLSpeakerData(string rawSpeaker)
     {
@@ -60,6 +62,10 @@ public class DLSpeakerData
             }
             else if(match.Value == expressionCastID)
             {
+                startIndex = match.Index + expressionCastID.Length;
+                endIndex = (i < matches.Count - 1) ? matches[i + 1].Index : rawSpeaker.Length;
+                string castPos = rawSpeaker.Substring(startIndex, endIndex - startIndex);
+
 
             }
         }
