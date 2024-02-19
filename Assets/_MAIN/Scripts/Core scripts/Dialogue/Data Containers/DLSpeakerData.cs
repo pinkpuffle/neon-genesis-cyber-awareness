@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Text.RegularExpressions;
 
 public class DLSpeakerData
 {
@@ -10,6 +11,15 @@ public class DLSpeakerData
 
     public DLSpeakerData(string rawSpeaker)
     {
+        string pattern = @" as |  at | \[";
+        MatchCollection matches = Regex.Matches(rawSpeaker, pattern);
 
+        if(matches.Count == 0) //no match - empty
+        {
+            name = rawSpeaker;
+            castName = "";
+            castPosition = Vector2.zero;
+            CastExpressions = new List<(int layer, string expression)>();
+        }
     }
 }
