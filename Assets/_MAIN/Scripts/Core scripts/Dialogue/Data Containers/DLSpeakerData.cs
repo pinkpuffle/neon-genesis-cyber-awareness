@@ -65,7 +65,7 @@ public class DLSpeakerData
             {
                 startIndex = match.Index + expressionCastID.Length;
                 endIndex = (i < matches.Count - 1) ? matches[i + 1].Index : rawSpeaker.Length;
-                string castExp = rawSpeaker.Substring(startIndex, endIndex - startIndex);
+                string castExp = rawSpeaker.Substring(startIndex, endIndex - (startIndex + 1));
 
                 CastExpressions = castExp.Split(expressionLayerJoiner)
                     .Select(x => //split into array, each item split - integer for layer, name for expression
