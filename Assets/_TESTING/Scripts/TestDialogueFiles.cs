@@ -21,6 +21,10 @@ namespace testing {
             for(int i = 0; i < lines.Count; i++) //print out everything
             {
                 string line = lines[0];
+
+                if (string.IsNullOrWhiteSpace(line))
+                    continue;
+
                 DialogueLine dl = DialogueParser.Parse(line);
 
                 Debug.Log($"{dl.speaker.name} as [{(dl.speaker.castName != string.Empty ? dl.speaker.castName : dl.speaker.name)}]at {dl.speaker.castPosition}");
