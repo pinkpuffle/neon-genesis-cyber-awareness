@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 public class DLSpeakerData
 {
@@ -53,9 +54,9 @@ public class DLSpeakerData
                 endIndex = (i < matches.Count - 1) ? matches[i + 1].Index : rawSpeaker.Length;
                 string castPos = rawSpeaker.Substring(startIndex, endIndex - startIndex);
 
-                string[] axis = castPos.Split(axisDelimiterID, System.StringSplitOptions.RemoveEmptyEntries);
+                string[] axis = castPos.Split(axisDelimiter, System.StringSplitOptions.RemoveEmptyEntries);
 
-                float.TryParse(axis[0], out castPosition.X);
+                float.TryParse(axis[0], out castPosition.x);
 
                 if (axis.Length > 1)
                     float.TryParse(axis[1], out castPosition.y);
@@ -64,9 +65,14 @@ public class DLSpeakerData
             {
                 startIndex = match.Index + expressionCastID.Length;
                 endIndex = (i < matches.Count - 1) ? matches[i + 1].Index : rawSpeaker.Length;
-                string castPos = rawSpeaker.Substring(startIndex, endIndex - startIndex);
+                string castExp = rawSpeaker.Substring(startIndex, endIndex - startIndex);
 
-
+                CastExpressions = castExp.Split(expressionLayerJoiner)
+                    .Select(x => //split into array, each item split - integer for layer, name for expression
+                    {
+                        var parts = x.Trim().Split(expressionLayerDelimiter);
+                        return (int.Parse(parts[0]), parts[1]);
+                    }).ToList();
             }
         }
 
