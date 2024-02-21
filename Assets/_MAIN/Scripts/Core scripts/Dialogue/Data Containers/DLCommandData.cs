@@ -31,7 +31,9 @@ public class DLCommandData
             int index = cmd.IndexOf(argumentsContainerID); //index of parenthesis
             command.name = cmd.Substring(0, index).Trim();
             command.arguments = GetArgs(cmd.Substring(index + 1, cmd.Length - index - 2));
+            result.Add(command);
         }
+        return result;
     }
 
     private string[] GetArgs(string args)
