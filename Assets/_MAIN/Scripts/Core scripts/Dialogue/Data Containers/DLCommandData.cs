@@ -13,4 +13,14 @@ public class DLCommandData
         public string name;
         public string[] arguments;
     }
+
+    public DLCommandData(string rawCommands)
+    {
+        commands = RipCommands(rawCommands);
+    }
+
+    private List<Command> RipCommands(string rawCammands)
+    {
+
+    }
 }
