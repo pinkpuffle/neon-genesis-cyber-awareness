@@ -40,5 +40,27 @@ public class DLCommandData
         StringBuilder currentArg = new StringBuilder(); //build upon
         bool inQuotes = false;
 
+        for(int i = 0; i < args.Length, i++)
+        {
+            if(args[i] == '"') //quotation mark
+            {
+                inQuotes = true;
+                continue;
+            }
+
+            if(!inQuotes && args[i] == ' ')
+            {
+                argList.Add(currentArg.ToString()); //save argument
+                currentArg.Clear();
+                continue;
+            }
+
+            currentArg.Append(args[i]);
+        }
+
+        if(currentArg.Length > 0)
+            argList.Add(currentArg.ToString()); //add last argument
+
+        return argList.ToArray();
     }
 }
