@@ -12,7 +12,7 @@ namespace DIALOGUE
         public DLCommandData commands;
 
         public bool hasSpeaker => speaker != null;
-        public bool hasDialogue => dialogue.hasDialogue;
+        public bool hasDialogue => dialogue != null;
         public bool hasCommands => commands != null;
 
         public DialogueLine(string speaker, string dialogue, string commands)
