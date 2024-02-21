@@ -9,17 +9,17 @@ namespace DIALOGUE
     {
         public DLSpeakerData speaker;
         public DLDialogueData dialogue;
-        public string commands;
+        public DLCommandData commands;
 
         public bool hasSpeaker => speaker != null;
         public bool hasDialogue => dialogue.hasDialogue;
-        public bool hasCommands => commands != string.Empty;
+        public bool hasCommands => commands != null;
 
         public DialogueLine(string speaker, string dialogue, string commands)
         {
             this.speaker = (string.IsNullOrWhiteSpace(speaker) ? null : new DLSpeakerData(speaker));
             this.dialogue = new DLDialogueData(dialogue);
-            this.commands = commands;
+            this.commands = (string.IsNullOrWhiteSpace(commands) ? null : new DLCommandData(commands));
         }
     }
 }
