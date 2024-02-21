@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class DLCommandData
@@ -29,7 +30,15 @@ public class DLCommandData
             Command command = new Command();
             int index = cmd.IndexOf(argumentsContainerID); //index of parenthesis
             command.name = cmd.Substring(0, index).Trim();
-            
+            command.arguments = GetArgs(cmd.Substring(index + 1, cmd.Length - index - 2));
         }
+    }
+
+    private string[] GetArgs(string args)
+    {
+        List<string> argList = new List<string>();
+        StringBuilder currentArg = new StringBuilder(); //build upon
+        bool inQuotes = false;
+
     }
 }
