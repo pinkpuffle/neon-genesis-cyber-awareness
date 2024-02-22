@@ -34,6 +34,9 @@ public class CommandManager : MonoBehaviour
 
     public void Execute(string commandName)
     {
+        Delegate command = database.GetCommand(commandName);
 
+        if(command != null)
+            command.DynamicInvoke();
     }
 }
