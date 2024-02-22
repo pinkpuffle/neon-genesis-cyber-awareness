@@ -7,19 +7,19 @@ namespace DIALOGUE
 
     public class DialogueLine
     {
-        public DLSpeakerData speaker;
-        public DLDialogueData dialogue;
-        public DLCommandData commands;
+        public DLSpeakerData speakerData;
+        public DLDialogueData dialogueData;
+        public DLCommandData commandData;
 
-        public bool hasSpeaker => speaker != null;
-        public bool hasDialogue => dialogue != null;
-        public bool hasCommands => commands != null;
+        public bool hasSpeaker => speakerData != null;
+        public bool hasDialogue => dialogueData != null;
+        public bool hasCommands => commandData != null;
 
         public DialogueLine(string speaker, string dialogue, string commands)
         {
-            this.speaker = (string.IsNullOrWhiteSpace(speaker) ? null : new DLSpeakerData(speaker));
-            this.dialogue = (string.IsNullOrWhiteSpace(commands) ? null : new DLDialogueData(dialogue));
-            this.commands = (string.IsNullOrWhiteSpace(commands) ? null : new DLCommandData(commands));
+            this.speakerData = (string.IsNullOrWhiteSpace(speaker) ? null : new DLSpeakerData(speaker));
+            this.dialogueData = (string.IsNullOrWhiteSpace(commands) ? null : new DLDialogueData(dialogue));
+            this.commandData = (string.IsNullOrWhiteSpace(commands) ? null : new DLCommandData(commands));
         }
     }
 }
