@@ -1,10 +1,9 @@
 
 
+Joe "Hey what is up my friend?" playSong("Epic music" -v 0.75 -p 1), setMood(epic)
 
-Elen as ??? "Hello there"
+Michael "Not very much my good friend." playVoice("the_voice" -v 1.5), setBackground(Room2 -t "Diagonal Lines" -s 3.5)
 
-Elen as ??? at 1:0 "Hello there"
+setAccomplishment("The super epic" true), setCLI(Michael 0:Angel 1:Intrigued -s 2.3 -l true)
 
-Elen at 0.5:0.5 as The Girl "Hello there"
-
-Elen as ??? [0:Angel, 1:happy] at 0 "Hello there"
+showScreen(false), stopMusic(all -s 1.5)
