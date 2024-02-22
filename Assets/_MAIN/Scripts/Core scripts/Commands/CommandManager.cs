@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class CommandManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static CommandManager instance { get; private set; } //singleton
+    private CommandDatabase database;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            instance = this;
+        }
+        else
+            DestroyImmediate(gameObject);
+
     }
 }
