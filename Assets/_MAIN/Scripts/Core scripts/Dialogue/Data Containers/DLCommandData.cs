@@ -42,7 +42,7 @@ public class DLCommandData
         StringBuilder currentArg = new StringBuilder(); //build upon
         bool inQuotes = false;
 
-        for(int i = 0; i < args.Length, i++)
+        for(int i = 0; i < args.Length; i++)
         {
             if(args[i] == '"') //quotation mark
             {
