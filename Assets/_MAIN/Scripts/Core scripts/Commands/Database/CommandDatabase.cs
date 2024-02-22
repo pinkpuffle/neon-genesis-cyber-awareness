@@ -20,4 +20,15 @@ public class CommandDatabase : MonoBehaviour
             Debug.LogError($"Command already exists in database '{commandName}'");
         }
     }
+
+    public Delegate GetCommand(string commandName)
+    {
+        if (!database.ContainsKey(commandName))
+        {
+            Debug.LogError($"Command '{commandName}' does not exist in database");
+            return null;
+        }
+
+        return database[commandName];
+    }
 }

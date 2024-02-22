@@ -31,4 +31,9 @@ public class CommandManager : MonoBehaviour
             DestroyImmediate(gameObject);
 
     }
+
+    public void Execute(string commandName)
+    {
+
+    }
 }
