@@ -1,18 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CommandDatabase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private Dictionary<string, Delegate> database = new Dictionary<string, Delegate>();
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool HasCommand(string commandName) => database.ContainsKey(commandName);
 }
