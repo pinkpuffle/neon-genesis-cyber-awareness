@@ -12,6 +12,8 @@ public class CommandManager : MonoBehaviour
         if (instance != null)
         {
             instance = this;
+
+            database = new CommandDatabase();
         }
         else
             DestroyImmediate(gameObject);
