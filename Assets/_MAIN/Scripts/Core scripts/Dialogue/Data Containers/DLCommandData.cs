@@ -46,7 +46,7 @@ public class DLCommandData
         {
             if(args[i] == '"') //quotation mark
             {
-                inQuotes = true;
+                inQuotes = !inQuotes;
                 continue;
             }
 
