@@ -27,7 +27,7 @@ namespace testing {
 
                 for(int i = 0; i < dl.commandData.commands.Count; i++)
                 {
-                    DLCommandData.Command command dl.commandData.commands[i];
+                    DLCommandData.Command command = dl.commandData.commands[i];
                     Debug.Log($"Command [{i}] '{command.name}' has arguments [{string.Join(", ", command.arguments)}]");
                 }
             }
