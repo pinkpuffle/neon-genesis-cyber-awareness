@@ -32,7 +32,7 @@ public class CommandManager : MonoBehaviour
 
     }
 
-    public void Execute(string commandName)
+    public void Execute(string commandName, params string[] args) //independant strings compiled into array
     {
         Delegate command = database.GetCommand(commandName);
 
