@@ -36,7 +36,14 @@ public class CommandManager : MonoBehaviour
     {
         Delegate command = database.GetCommand(commandName);
 
-        if(command != null)
+        if (command == null) //not proceed if null
+            return;
+
+        if (command is Action) //if action, call it
             command.DynamicInvoke();
+        else if (command is Action<string>) //if command expecting a string
+            command.DynamicInvoke(args[0]);
+        else if (command is Action<string[]>) //string with multiple arguments
+            command.DynamicInvoke((object)args);
     }
 }
