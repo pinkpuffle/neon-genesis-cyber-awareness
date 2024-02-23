@@ -78,8 +78,8 @@ namespace DIALOGUE
             }
             else if (commandStart != -1 && dialogueStart > commandStart) //command line
                 commands = rawLine;
-            else //just a speaker
-                speaker = rawLine;
+            else //just unformatted dialogue
+                dialogue = rawLine;
 
 
 
