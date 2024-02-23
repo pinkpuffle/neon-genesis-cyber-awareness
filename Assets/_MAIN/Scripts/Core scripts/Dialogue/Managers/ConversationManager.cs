@@ -71,7 +71,13 @@ namespace DIALOGUE
 
         IEnumerator LineRunCommands(DialogueLine line)
         {
-            Debug.Log(line.commandData); //to see if working
+            List<DLCommandData.Command> commands = line.commandData.commands; //every command assigned to line
+
+            foreach(DLCommandData.Command command in commands)
+            {
+                CommandManager.instance.Execute(command.name, command.arguments);
+            }
+
             yield return null;
         }
 
