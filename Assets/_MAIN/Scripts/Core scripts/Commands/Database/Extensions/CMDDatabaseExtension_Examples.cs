@@ -19,6 +19,8 @@ public class CMDDatabaseExtension_Examples : CMDDatabaseExtension
 
         //add coroutine with no parameters
         database.AddCommand("process", new Func<IEnumerator>(SimpleProcess)); //adds coroutine to database
+        database.AddCommand("process_1p", new Func<string, IEnumerator>(LineProcess));
+        database.AddCommand("process_mp", new Func<string[], IEnumerator>(MultiLineProcess));
     }
 
     private static void PrintDefaultMessage()
@@ -48,4 +50,29 @@ public class CMDDatabaseExtension_Examples : CMDDatabaseExtension
             yield return new WaitForSeconds(1);
         }
     }
+
+    private static IEnumerator LineProcess(string data)
+    {
+        if(int.TryParse(data, out int num))
+        {
+            for (int i = 1; i <= num; i++)
+            {
+                Debug.Log($"Process running... [{i}]");
+                yield return new WaitForSeconds(1);
+            }
+
+        }
+    }
+
+    private static IEnumerator MultiLineProcess(string[] data)
+    {
+        foreach(string line in data)
+        {
+            Debug.Log($"Process message: '{line}'");
+            yield return new WaitForSeconds(0.5f);
+
+        }
+    }
+
+
 }
