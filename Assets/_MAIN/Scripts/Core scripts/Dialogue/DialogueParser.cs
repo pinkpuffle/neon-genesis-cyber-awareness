@@ -12,7 +12,7 @@ namespace DIALOGUE
         //{n{as cn}{ at x{:y}}{ [l:e{ + l:e}]} "d"} {c(a){, c(a)}}
 
         //command pattern
-        private const string commandRegexPattern = @"\w*[^\s]\("; //word of any length as long as not proceeded by white space
+        private const string commandRegexPattern = @"[\w\[\]]*[^\s]\("; //word or bracket of any length as long as not proceeded by white space
 
         public static DialogueLine Parse(string rawLine)
         {
