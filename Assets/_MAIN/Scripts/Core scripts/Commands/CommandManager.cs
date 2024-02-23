@@ -51,9 +51,13 @@ public class CommandManager : MonoBehaviour
             //command.DynamicInvoke((object)args);
     }
 
-    private Coroutine StartProcess(string commandName, Delegate process, string[] args)
+    private Coroutine StartProcess(string commandName, Delegate command, string[] args)
     {
+        StopCurrentProcess();
 
+        process = StartCoroutine(RunningProcess(command, args));
+
+        return process;
     }
 
     private void StopCurrentProcess()
@@ -61,5 +65,10 @@ public class CommandManager : MonoBehaviour
         if (process != null)
             StopCoroutine(process);
         process = null;
+    }
+
+    private IEnumerator RunningProcess(Delegate process, string[] args)
+    {
+
     }
 }
