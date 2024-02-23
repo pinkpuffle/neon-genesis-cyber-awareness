@@ -76,7 +76,10 @@ namespace DIALOGUE
 
             foreach(DLCommandData.Command command in commands)
             {
-                CommandManager.instance.Execute(command.name, command.arguments);
+                if (command.waitForCompletion)
+                    yield return CommandManager.instance.Execute(command.name, command.arguments);
+                else
+                    CommandManager.instance.Execute(command.name, command.arguments);
             }
 
             yield return null;
