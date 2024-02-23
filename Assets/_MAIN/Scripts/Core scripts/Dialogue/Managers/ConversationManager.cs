@@ -54,6 +54,10 @@ namespace DIALOGUE
 
                 if (line.hasCommands) //run commands
                     yield return LineRunCommands(line);
+
+                if(line.hasDialogue)
+                    //wait for user input
+                    yield return WaitForUserInput();
             }
         }
 
@@ -64,9 +68,6 @@ namespace DIALOGUE
 
             //build dialogue
             yield return BuildLineSegments(line.dialogueData);
-
-            //wait for user input
-            yield return WaitForUserInput();
         }
 
         IEnumerator LineRunCommands(DialogueLine line)
