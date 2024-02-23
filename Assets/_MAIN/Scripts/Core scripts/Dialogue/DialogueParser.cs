@@ -53,14 +53,15 @@ namespace DIALOGUE
 
             //identify command
             Regex commandRegex = new Regex(commandRegexPattern);
-            Match match = commandRegex.Match(rawLine);
+            MatchCollection matches = commandRegex.Matches(rawLine);
             int commandStart = -1;
-            if (match.Success)
+            foreach(Match match in matches)
             {
-                commandStart = match.Index;
-
-                if(dialogueStart == -1 && dialogueEnd == -1) //no dialogue, only command
-                    return ("", "", rawLine.Trim()); //return just command
+                if (match.Index < dialogueStart || match.Index > dialogueEnd) //not contained within dialogue (valid)
+                {
+                    commandStart = match.Index;
+                    break;
+                }
             }
 
             //if here, have dialogue or multi word argument in command. FIgure out if dialogue
