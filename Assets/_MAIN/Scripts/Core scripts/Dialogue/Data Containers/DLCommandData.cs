@@ -8,11 +8,13 @@ public class DLCommandData
     public List<Command> commands;
     private const char commandSplitterID = ',';
     private const char argumentsContainerID = '(';
+    private const string waitCommandID = "[wait]";
 
     public struct Command
     {
         public string name;
         public string[] arguments;
+        public bool waitForCompletion;
     }
 
     public DLCommandData(string rawCommands)
@@ -30,6 +32,15 @@ public class DLCommandData
             Command command = new Command();
             int index = cmd.IndexOf(argumentsContainerID); //index of parenthesis
             command.name = cmd.Substring(0, index).Trim();
+
+            if (command.name.StartsWith(waitCommandID))
+            {
+                command.name = command.name.ToLower().Substring(waitCommandID.Length);
+                command.waitForCompletion = true;
+            }
+            else
+                command.waitForCompletion = false;
+
             command.arguments = GetArgs(cmd.Substring(index + 1, cmd.Length - index - 2));
             result.Add(command);
         }
