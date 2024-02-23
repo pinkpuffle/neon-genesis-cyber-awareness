@@ -8,6 +8,8 @@ using System;
 public class CommandManager : MonoBehaviour
 {
     public static CommandManager instance { get; private set; } //singleton
+    private static Coroutine process = null;
+    public static bool isRunningProcess => process != null;
     private CommandDatabase database;
 
     private void Awake()
@@ -50,4 +52,14 @@ public class CommandManager : MonoBehaviour
     }
 
     private Coroutine StartProcess(string commandName, Delegate process, string[] args)
+    {
+
+    }
+
+    private void StopCurrentProcess()
+    {
+        if (process != null)
+            StopCoroutine(process);
+        process = null;
+    }
 }
