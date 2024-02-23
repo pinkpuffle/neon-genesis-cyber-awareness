@@ -77,5 +77,14 @@ public class CommandManager : MonoBehaviour
 
         else if (command is Action<string[]>) //if expecting multiple arguments
             command.DynamicInvoke((object)args);
+
+        else if (command is Func<IEnumerator>) //action
+            yield return ((Func<IEnumerator>)command)(); //get command, call it
+
+        else if (command is Func<string, IEnumerator>) //string
+            yield return ((Func<string, IEnumerator>)command)(args[0]); 
+
+        else if (command is Func<string[], IEnumerator>) //multi
+            yield return ((Func<string[], IEnumerator>)command)(args);
     }
 }
