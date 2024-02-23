@@ -42,13 +42,6 @@ public class CommandManager : MonoBehaviour
             return null;
 
         return StartProcess(commandName, command, args);
-
-        //if (command is Action) //if action, call it
-            //command.DynamicInvoke();
-        //else if (command is Action<string>) //if command expecting a string
-            //command.DynamicInvoke(args[0]);
-        //else if (command is Action<string[]>) //string with multiple arguments
-            //command.DynamicInvoke((object)args);
     }
 
     private Coroutine StartProcess(string commandName, Delegate command, string[] args)
@@ -67,8 +60,22 @@ public class CommandManager : MonoBehaviour
         process = null;
     }
 
-    private IEnumerator RunningProcess(Delegate process, string[] args)
+    private IEnumerator RunningProcess(Delegate command, string[] args)
     {
+        yield return WaitingForProcessToComplete(command, args);
 
+        process = null;
+    }
+
+    private IEnumerator WaitingForProcessToComplete(Delegate command, string[] args)
+    {
+        if (command is Action) //if action
+            command.DynamicInvoke();
+
+        else if (command is Action<string>) //if expecting string
+            command.DynamicInvoke(args[0]);
+
+        else if (command is Action<string[]>) //if expecting multiple arguments
+            command.DynamicInvoke((object)args);
     }
 }
