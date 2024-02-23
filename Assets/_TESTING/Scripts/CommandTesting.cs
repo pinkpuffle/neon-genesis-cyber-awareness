@@ -14,6 +14,10 @@ public class CommandTesting : MonoBehaviour
         CommandManager.instance.Execute("lambda");
         CommandManager.instance.Execute("lambda_1p", "Hello lambda!");
         CommandManager.instance.Execute("lambda_mp", "lambda1", "lambda2", "lambda3");
+
+        CommandManager.instance.Execute("process");
+        CommandManager.instance.Execute("process_1p", "3");
+        CommandManager.instance.Execute("process_mp", "Process line 1", "Process line 2", "Process line 3");
     }
 
     // Update is called once per frame
