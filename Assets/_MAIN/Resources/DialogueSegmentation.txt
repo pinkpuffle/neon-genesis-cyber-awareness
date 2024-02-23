@@ -1,4 +1,5 @@
 
+print_1p("This is a command running from file")
 
 Joe "Hey what is up my friend?" playSong("Epic music" -v 0.75 -p 1), setMood(epic)
 
