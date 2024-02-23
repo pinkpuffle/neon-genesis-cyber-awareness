@@ -64,6 +64,9 @@ namespace DIALOGUE
                 }
             }
 
+            if (commandStart != -1 && (dialogueStart == -1 && dialogueEnd == -1))
+                return ("", "", rawLine.Trim()); //just command
+
             //if here, have dialogue or multi word argument in command. FIgure out if dialogue
             if (dialogueStart != -1 && dialogueEnd != -1 && (commandStart == -1 || commandStart > dialogueEnd)) //if found dialogue AND no command or the start of command is greater than end = dialogue
             {
