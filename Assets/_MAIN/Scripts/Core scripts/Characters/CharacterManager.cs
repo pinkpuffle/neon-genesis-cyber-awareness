@@ -30,7 +30,7 @@ namespace CHARACTERS
 
             Character character = CreateCharacterFromInfo(info);
 
-
+            characters.Add(characterName.ToLower(), character);
             return character;
         }
 
