@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace CHARACTERS
 {
+    [System.Serializable]
     public abstract class Character
     {
         public string name = "";
