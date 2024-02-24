@@ -28,8 +28,10 @@ namespace CHARACTERS
 
             CharacterInfo info = GetCharacterInfo(characterName);
 
+            Character character = CreateCharacterFromInfo(info);
 
-            return null;
+
+            return character;
         }
 
         private CharacterInfo GetCharacterInfo(string characterName)
@@ -40,6 +42,24 @@ namespace CHARACTERS
             result.config = config.GetConfig(characterName);
 
             return result;
+        }
+
+        private Character CreateCharacterFromInfo(CharacterInfo info)
+        {
+            CharacterConfigData config = info.config;
+            if (config.characterType == Character.CharacterType.Text)
+                return new Character_Text(info.name)
+
+            if (config.characterType == Character.CharacterType.Sprite || config.characterType == Character.CharacterType.SpriteSheet)
+                return new Character_Sprite(info.name);
+
+            if (config.characterType == Character.CharacterType.Live2D)
+                return new Character_Live2D(info.name);
+
+            if (config.characterType == Character.CharacterType.Model3D)
+                return new Character_Model3D(info.name);
+
+            return null; 
         }
 
         private class CharacterInfo
