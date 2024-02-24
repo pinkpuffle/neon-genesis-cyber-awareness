@@ -48,7 +48,7 @@ namespace CHARACTERS
         {
             CharacterConfigData config = info.config;
             if (config.characterType == Character.CharacterType.Text)
-                return new Character_Text(info.name)
+                return new Character_Text(info.name);
 
             if (config.characterType == Character.CharacterType.Sprite || config.characterType == Character.CharacterType.SpriteSheet)
                 return new Character_Sprite(info.name);
