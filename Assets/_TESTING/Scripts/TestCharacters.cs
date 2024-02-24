@@ -10,7 +10,9 @@ namespace TESTING
         // Start is called before the first frame update
         void Start()
         {
-            Character character = CharacterManager.instance.CreateCharacter("Michael");
+            //Character character = CharacterManager.instance.CreateCharacter("Michael");
+            Character Michael = CharacterManager.instance.CreateCharacter("Michael");
+            Character Michael = CharacterManager.instance.CreateCharacter("Michael");
         }
 
         // Update is called once per frame
