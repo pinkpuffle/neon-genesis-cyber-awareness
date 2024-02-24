@@ -18,7 +18,7 @@ namespace CHARACTERS
                 CharacterConfigData data = characters[i];
 
                 if (string.Equals(characterName, data.name.ToLower()) || string.Equals(characterName, data.alias.ToLower()))
-                    return data;
+                    return data.Copy();
             }
         }
     }
