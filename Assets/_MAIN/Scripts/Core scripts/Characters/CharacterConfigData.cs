@@ -5,6 +5,7 @@ using TMPro;
 
 namespace CHARACTERS
 {
+    [System.Serializable]
     public class CharacterConfigData
     {
         public string name;
