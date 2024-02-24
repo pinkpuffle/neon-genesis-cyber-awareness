@@ -17,5 +17,20 @@ namespace CHARACTERS
 
         public TMP_FontAsset nameFont;
         public TMP_FontAsset dialogueFont;
+
+        public CharacterConfigData Copy()
+        {
+            CharacterConfigData result = new CharacterConfigData();
+
+            result.name = name;
+            result.alias = alias;
+            result.characterType = characterType;
+            result.nameFont = nameFont;
+            result.dialogueFont = dialogueFont;
+            result.nameColour = new Color(nameColour.r, nameColour.g, nameColour.b, nameColour.a);
+            result.dialogueColour = new Color(dialogueColour.r, dialogueColour.g, dialogueColour.b, dialogueColour.a);
+
+            return result;
+        }
     }
 }
