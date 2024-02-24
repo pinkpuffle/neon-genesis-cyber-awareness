@@ -13,5 +13,14 @@ namespace CHARACTERS
         {
             instance = this;
         }
+
+        public Character CreateCharacter(string characterName)
+        {
+            if (characters.ContainsKey(characterName.ToLower())) //for dupe
+            {
+                Debug.LogWarning($"A character called '{characterName}' already exists. Did not create.");
+                return null;
+            }
+        }
     }
 }
