@@ -2,17 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterConfigSO : MonoBehaviour
+namespace CHARACTERS
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(fileName = "CharacterCOnfigurationAsset", menuName = "Dialogue System/Character Configuration Asset")]
+    public class CharacterConfigSO : ScriptableObject //as own asset
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
