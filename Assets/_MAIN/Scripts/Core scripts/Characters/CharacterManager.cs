@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DIALOGUE;
 
 namespace CHARACTERS
 {
@@ -8,6 +9,8 @@ namespace CHARACTERS
     {
         public static CharacterManager instance { get; private set; } //singleton
         private Dictionary<string, Character> characters = new Dictionary<string, Character>();
+
+        private CharacterConfigSO config => DialogueSys.instance.config.characterConfigurationAsset;
 
         private void Awake()
         {
@@ -33,6 +36,8 @@ namespace CHARACTERS
         {
             CharacterInfo result = new CharacterInfo();
             result.name = characterName;
+
+            result.config = config.GetConfig(characterName);
 
             return result;
         }
