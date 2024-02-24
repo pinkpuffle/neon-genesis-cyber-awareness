@@ -12,3 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10295cf0feda7bc4890317d569e79a54, type: 3}
   m_Name: CharacterCOnfigurationAsset
   m_EditorClassIdentifier: 
+  characters:
+  - name: Michael
+    alias: m
+    characterType: 1
+    nameColour: {r: 1, g: 1, b: 1, a: 0}
+    dialogueColour: {r: 1, g: 1, b: 1, a: 0}
+    nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - name: Elen
+    alias: e
+    characterType: 0
+    nameColour: {r: 0.54013556, g: 0.124955505, b: 0.9811321, a: 0}
+    dialogueColour: {r: 0.31215632, g: 0.8679245, b: 0.15966538, a: 0}
+    nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - name: Joe
+    alias: j
+    characterType: 0
+    nameColour: {r: 0.034843344, g: 0.056714606, b: 0.8207547, a: 0}
+    dialogueColour: {r: 0.8113208, g: 0.7905545, b: 0.12629052, a: 0}
+    nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
