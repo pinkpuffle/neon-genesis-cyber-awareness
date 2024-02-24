@@ -32,5 +32,21 @@ namespace CHARACTERS
 
             return result;
         }
+
+         public static CharacterConfigData Default
+        {
+            get
+            {
+                CharacterConfigData result = new CharacterConfigData();
+
+                result.name = "";
+                result.alias = "";
+                result.characterType = Character.CharacterType.Text;
+                result.nameFont = ;
+                result.dialogueFont = dialogueFont;
+                result.nameColour = new Color(nameColour.r, nameColour.g, nameColour.b, nameColour.a);
+                result.dialogueColour = new Color(dialogueColour.r, dialogueColour.g, dialogueColour.b, dialogueColour.a);
+            }
+        }
     }
 }
