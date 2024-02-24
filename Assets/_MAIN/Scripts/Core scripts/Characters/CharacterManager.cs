@@ -22,7 +22,25 @@ namespace CHARACTERS
                 return null;
             }
 
+
+            CharacterInfo info = GetCharacterInfo
+
+
             return null;
+        }
+
+        private CharacterInfo GetCharacterInfo(string characterName)
+        {
+            CharacterInfo result = new CharacterInfo();
+            result.name = characterName;
+
+            return result;
+        }
+
+        private class CharacterInfo
+        {
+            public string name = "";
+            public CharacterConfigData config = null;
         }
     }
 }
