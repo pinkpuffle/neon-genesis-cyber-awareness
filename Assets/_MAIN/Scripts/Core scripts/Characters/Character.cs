@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+namespace CHARACTERS
 {
-    // Start is called before the first frame update
-    void Start()
+    public abstract class Character
     {
-        
-    }
+        public string name = "";
+        public RectTransform root = null;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public enum CharacterType //most of these are optional
+        {
+            Text,
+            Sprite,
+            SpriteSheet,
+            Live2D,
+            Model3D
+        }
     }
 }
