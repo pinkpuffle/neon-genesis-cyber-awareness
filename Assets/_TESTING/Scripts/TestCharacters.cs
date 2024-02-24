@@ -12,7 +12,7 @@ namespace TESTING
         {
             //Character character = CharacterManager.instance.CreateCharacter("Michael");
             Character Michael = CharacterManager.instance.CreateCharacter("Michael");
-            Character Michael = CharacterManager.instance.CreateCharacter("Michael");
+            Character Michael2 = CharacterManager.instance.CreateCharacter("Michael");
         }
 
         // Update is called once per frame
