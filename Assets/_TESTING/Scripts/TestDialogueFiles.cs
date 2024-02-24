@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DIALOGUE;
 
-namespace testing {
+namespace TESTING {
 
     public class TestConversation : MonoBehaviour
     {
