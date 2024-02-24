@@ -1,5 +1,6 @@
 using UnityEngine;
 using CHARACTERS;
+using TMPro;
 
 namespace DIALOGUE
 {
@@ -7,5 +8,8 @@ namespace DIALOGUE
     public class DialogueSystemConfigurationSO : ScriptableObject
     {
         public CharacterConfigSO characterConfigurationAsset;
+
+        public Color defaultTextColour = Color.white;
+        public TMP_FontAsset defaultFont;
     }
 }

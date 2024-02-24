@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DIALOGUE;
 
 namespace CHARACTERS
 {
@@ -32,8 +33,9 @@ namespace CHARACTERS
 
             return result;
         }
-
-         public static CharacterConfigData Default
+        private static Color defaultColor => DialogueSys.instance.config.defaultTextColour;
+        private static TMP_FontAsset defaultFont => DialogueSys.instance.config.defaultFont;
+        public static CharacterConfigData Default
         {
             get
             {
@@ -42,10 +44,12 @@ namespace CHARACTERS
                 result.name = "";
                 result.alias = "";
                 result.characterType = Character.CharacterType.Text;
-                result.nameFont = ;
-                result.dialogueFont = dialogueFont;
-                result.nameColour = new Color(nameColour.r, nameColour.g, nameColour.b, nameColour.a);
-                result.dialogueColour = new Color(dialogueColour.r, dialogueColour.g, dialogueColour.b, dialogueColour.a);
+                result.nameFont = defaultFont;
+                result.dialogueFont = defaultFont;
+                result.nameColour = new Color(defaultColor.r, defaultColor.g, defaultColor.b, defaultColor.a);
+                result.dialogueColour = new Color(defaultColor.r, defaultColor.g, defaultColor.b, defaultColor.a);
+
+                return result;
             }
         }
     }
