@@ -21,6 +21,8 @@ namespace CHARACTERS
                 Debug.LogWarning($"A character called '{characterName}' already exists. Did not create.");
                 return null;
             }
+
+            return null;
         }
     }
 }
