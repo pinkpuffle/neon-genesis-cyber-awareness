@@ -23,7 +23,7 @@ namespace CHARACTERS
             }
 
 
-            CharacterInfo info = GetCharacterInfo
+            CharacterInfo info = GetCharacterInfo(characterName);
 
 
             return null;
