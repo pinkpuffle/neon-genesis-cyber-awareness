@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DIALOGUE;
 
 namespace CHARACTERS
 {
@@ -14,11 +15,11 @@ namespace CHARACTERS
             this.name = name;
         }
 
-        public void Say(string dialogue) => Say(new List<string> { dialogue });
+        public Coroutine Say(string dialogue) => Say(new List<string> { dialogue });
 
-        public void Say(List<string> dialogue)
+        public Coroutine Say(List<string> dialogue)
         {
-
+            return DialogueSys.instance.Say(dialogue);
         }
 
         public enum CharacterType //most of these are optional
