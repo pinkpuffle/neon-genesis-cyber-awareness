@@ -17,9 +17,10 @@ namespace CHARACTERS
             {
                 CharacterConfigData data = characters[i];
 
-                if (string.Equals(characterName, data.name.ToLower()) || string.Equals(characterName, data.alias.ToLower()))
+                if (string.Equals(characterName, data.name.ToLower()) || string.Equals(characterName, data.alias.ToLower())) //match
                     return data.Copy();
             }
+            return CharacterConfigData.Default; //default values
         }
     }
 }
