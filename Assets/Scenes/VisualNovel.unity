@@ -3074,6 +3074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7586eece50c7bb442883636c6b5faa97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _config: {fileID: 11400000, guid: 8d97e383a1c196a458914a8e18f6f5b1, type: 2}
   dialogueCont:
     root: {fileID: 1147945111}
     nameContainer:

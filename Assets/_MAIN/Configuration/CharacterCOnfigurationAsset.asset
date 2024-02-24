@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10295cf0feda7bc4890317d569e79a54, type: 3}
-  m_Name: CharacterCOnfigurationAsset
+  m_Name: CharacterConfigurationAsset
   m_EditorClassIdentifier: 
   characters:
   - name: Michael
