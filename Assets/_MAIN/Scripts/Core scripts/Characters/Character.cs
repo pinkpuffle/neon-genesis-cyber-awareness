@@ -13,6 +13,9 @@ namespace CHARACTERS
 
         public DialogueSys dialogueSys => DialogueSys.instance;
 
+        protected Coroutine coRevealing, coHiding;
+        public bool isRevealing => coRevealing != null;
+
         public Character(string name)
         {
             this.name = name;
@@ -25,6 +28,21 @@ namespace CHARACTERS
         {
             dialogueSys.ShowSpeakerName(displayName);
             return dialogueSys.Say(dialogue);
+        }
+
+        public virtual Coroutine Show()
+        {
+
+        }
+
+        public virtual Coroutine Hide()
+        {
+
+        }
+
+        public virtual IEnumerator ShowingOrHiding()
+        {
+
         }
 
         public enum CharacterType //most of these are optional
