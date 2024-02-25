@@ -26,7 +26,9 @@ namespace CHARACTERS
 
             if(prefab != null)
             {
-                //GameObject ob = Object.Instantiate(prefab, )
+                GameObject ob = Object.Instantiate(prefab, manager.characterPanel);
+                ob.SetActive(true);
+                root = ob.GetComponent<RectTransform>();
             }
         }
 
