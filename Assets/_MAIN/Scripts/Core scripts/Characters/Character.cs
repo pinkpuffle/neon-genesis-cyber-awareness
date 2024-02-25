@@ -47,7 +47,7 @@ namespace CHARACTERS
                 manager.StopCoroutine(coHiding);
 
             coRevealing = manager.StartCoroutine(ShowingOrHiding(true));
-#
+
             return coRevealing;
         }
 
@@ -60,7 +60,7 @@ namespace CHARACTERS
                 manager.StopCoroutine(coRevealing);
 
             coHiding = manager.StartCoroutine(ShowingOrHiding(false));
-#
+
             return coHiding;
         }
 
