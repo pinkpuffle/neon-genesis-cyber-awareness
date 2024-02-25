@@ -16,6 +16,9 @@ namespace CHARACTERS
         private string characterRootPath => $"Characters/{characterNameID}";
         private string characterPrefabPath => $"{characterRootPath}/Character - [{characterNameID}]"; //to get prefab
 
+        [SerializeField] private RectTransform _characterPanel = null;
+        public RectTransform characterPanel => _characterPanel;
+
         private void Awake()
         {
             instance = this;
