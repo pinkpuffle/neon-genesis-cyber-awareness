@@ -12,6 +12,10 @@ namespace CHARACTERS
 
         private CharacterConfigSO config => DialogueSys.instance.config.characterConfigurationAsset;
 
+        private const string characterNameID = "<charname>";
+        private string characterRootPath => $"Characters/{characterNameID}";
+        private string characterPrefabPath => $"{characterRootPath}/Character - [{characterNameID}]"; //to get prefab
+
         private void Awake()
         {
             instance = this;
@@ -41,8 +45,18 @@ namespace CHARACTERS
 
             result.config = config.GetConfig(characterName);
 
+            result.prefab = GetPrefabForCharacter(characterName);
+
             return result;
         }
+
+        private GameObject GetPrefabForCharacter(string characterName)
+        {
+            string prefabPath = FormatCharacterPath(characterPrefabPath, characterName);
+            return Resources.Load<GameObject>(prefabPath);
+        }
+
+        private string FormatCharacterPath(string path, string characterName) => path.Replace(characterNameID, characterName);
 
         private Character CreateCharacterFromInfo(CharacterInfo info)
         {
@@ -66,6 +80,8 @@ namespace CHARACTERS
         {
             public string name = "";
             public CharacterConfigData config = null;
+
+            public GameObject prefab = null;
         }
     }
 }
