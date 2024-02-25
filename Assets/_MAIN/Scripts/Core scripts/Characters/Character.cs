@@ -23,11 +23,10 @@ namespace CHARACTERS
         {
             this.name = name;
             displayName = name;
-            this.config = config;
 
             if(prefab != null)
             {
-                GameObject ob = Object.Instantiate(prefab, )
+                //GameObject ob = Object.Instantiate(prefab, )
             }
         }
 
