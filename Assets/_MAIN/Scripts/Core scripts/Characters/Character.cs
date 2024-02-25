@@ -10,6 +10,7 @@ namespace CHARACTERS
         public string name = "";
         public string displayName = "";
         public RectTransform root = null;
+        public Animator animator;
 
         protected CharacterManager manager => CharacterManager.instance;
         public DialogueSys dialogueSys => DialogueSys.instance;
@@ -29,6 +30,7 @@ namespace CHARACTERS
                 GameObject ob = Object.Instantiate(prefab, manager.characterPanel);
                 ob.SetActive(true);
                 root = ob.GetComponent<RectTransform>();
+                animator = root.GetComponentInChildren<Animator>();
             }
         }
 
