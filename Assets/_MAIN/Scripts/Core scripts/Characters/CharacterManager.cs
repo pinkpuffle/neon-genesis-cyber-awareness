@@ -61,19 +61,23 @@ namespace CHARACTERS
         private Character CreateCharacterFromInfo(CharacterInfo info)
         {
             CharacterConfigData config = info.config;
-            if (config.characterType == Character.CharacterType.Text)
-                return new Character_Text(info.name);
 
-            if (config.characterType == Character.CharacterType.Sprite || config.characterType == Character.CharacterType.SpriteSheet)
-                return new Character_Sprite(info.name);
+            switch (config.characterType)
+            {
+                case Character.CharacterType.Text:
+                    return new Character_Text(info.name);
+                case Character.CharacterType.Sprite:
+                case Character.CharacterType.SpriteSheet:
+                    return new Character_Sprite(info.name);
+                //probably not gonna use these
+                case Character.CharacterType.Live2D:
+                    return new Character_Live2D(info.name);
+                case Character.CharacterType.Model3D:
+                    return new Character_Model3D(info.name);
 
-            if (config.characterType == Character.CharacterType.Live2D)
-                return new Character_Live2D(info.name);
-
-            if (config.characterType == Character.CharacterType.Model3D)
-                return new Character_Model3D(info.name);
-
-            return null; 
+                default:
+                    return null;
+            }
         }
 
         private class CharacterInfo
