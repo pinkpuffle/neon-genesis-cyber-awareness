@@ -72,14 +72,14 @@ namespace CHARACTERS
 
                 case Character.CharacterType.Sprite:
                 case Character.CharacterType.SpriteSheet:
-                    return new Character_Sprite(info.name);
+                    return new Character_Sprite(info.name, info.prefab);
 
                 //probably not gonna use these
                 case Character.CharacterType.Live2D:
-                    return new Character_Live2D(info.name);
+                    return new Character_Live2D(info.name, info.prefab);
 
                 case Character.CharacterType.Model3D:
-                    return new Character_Model3D(info.name);
+                    return new Character_Model3D(info.name, info.prefab);
 
                 default:
                     return null;
