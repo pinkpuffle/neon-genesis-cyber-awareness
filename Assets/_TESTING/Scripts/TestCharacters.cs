@@ -11,8 +11,10 @@ namespace TESTING
         void Start()
         {
             //Character character = CharacterManager.instance.CreateCharacter("Michael");
-            Character Michael = CharacterManager.instance.CreateCharacter("Michael");
-            Character Michael2 = CharacterManager.instance.CreateCharacter("Michael");
+            //Character Michael = CharacterManager.instance.CreateCharacter("Michael");
+            //Character Michael2 = CharacterManager.instance.CreateCharacter("Michael");
+
+            Character femaleStudent2 = CharacterManager.instance.CreateCharacter("Female Student 2");
         }
 
         // Update is called once per frame
