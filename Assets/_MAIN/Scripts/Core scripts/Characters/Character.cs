@@ -10,6 +10,7 @@ namespace CHARACTERS
         public string name = "";
         public string displayName = "";
         public RectTransform root = null;
+        public CharacterConfigData config;
 
         protected CharacterManager manager => CharacterManager.instance;
         public DialogueSys dialogueSys => DialogueSys.instance;
@@ -19,10 +20,16 @@ namespace CHARACTERS
         public bool isHiding => coHiding != null;
         public virtual bool isVisible => false;
 
-        public Character(string name)
+        public Character(string name, CharacterConfigData config, GameObject prefab)
         {
             this.name = name;
             displayName = name;
+            this.config = config;
+
+            if(prefab != null)
+            {
+                GameObject ob = Object.Instantiate(prefab, )
+            }
         }
 
         public Coroutine Say(string dialogue) => Say(new List<string> { dialogue });
