@@ -78,18 +78,18 @@ namespace CHARACTERS
             switch (config.characterType)
             {
                 case Character.CharacterType.Text:
-                    return new Character_Text(info.name);
+                    return new Character_Text(info.name, config);
 
                 case Character.CharacterType.Sprite:
                 case Character.CharacterType.SpriteSheet:
-                    return new Character_Sprite(info.name, info.prefab);
+                    return new Character_Sprite(info.name, info.prefab, config);
 
                 //probably not gonna use these
                 case Character.CharacterType.Live2D:
-                    return new Character_Live2D(info.name, info.prefab);
+                    return new Character_Live2D(info.name, info.prefab, config);
 
                 case Character.CharacterType.Model3D:
-                    return new Character_Model3D(info.name, info.prefab);
+                    return new Character_Model3D(info.name, info.prefab, config);
 
                 default:
                     return null;
