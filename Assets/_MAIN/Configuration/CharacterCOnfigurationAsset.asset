@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: CharacterConfigurationAsset
   m_EditorClassIdentifier: 
   characters:
-  - name: Michael
-    alias: m
+  - name: Nixon
+    alias: n
     characterType: 1
     nameColour: {r: 1, g: 1, b: 1, a: 0}
     dialogueColour: {r: 1, g: 1, b: 1, a: 0}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  - name: Elen
-    alias: e
-    characterType: 0
+  - name: Boss
+    alias: b
+    characterType: 1
     nameColour: {r: 0.54013556, g: 0.124955505, b: 0.9811321, a: 0}
     dialogueColour: {r: 0.31215632, g: 0.8679245, b: 0.15966538, a: 0}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  - name: Joe
-    alias: j
-    characterType: 0
+  - name: Hacker
+    alias: h
+    characterType: 1
     nameColour: {r: 0.034843344, g: 0.056714606, b: 0.8207547, a: 0}
     dialogueColour: {r: 0.8113208, g: 0.7905545, b: 0.12629052, a: 0}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
