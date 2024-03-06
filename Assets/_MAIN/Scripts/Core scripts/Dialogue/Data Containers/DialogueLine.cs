@@ -18,7 +18,7 @@ namespace DIALOGUE
         public DialogueLine(string speaker, string dialogue, string commands)
         {
             this.speakerData = (string.IsNullOrWhiteSpace(speaker) ? null : new DLSpeakerData(speaker));
-            this.dialogueData = (string.IsNullOrWhiteSpace(commands) ? null : new DLDialogueData(dialogue));
+            this.dialogueData = (string.IsNullOrWhiteSpace(dialogue) ? null : new DLDialogueData(dialogue));
             this.commandData = (string.IsNullOrWhiteSpace(commands) ? null : new DLCommandData(commands));
         }
     }
