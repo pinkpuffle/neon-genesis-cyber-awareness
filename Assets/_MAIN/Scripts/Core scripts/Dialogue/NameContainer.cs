@@ -27,5 +27,8 @@ namespace DIALOGUE
         {
             root.SetActive(false);
         }
+
+        public void SetNameColour(Color colour) => nameTxt.color = colour;
+        public void SetNameFont(TMP_FontAsset font) => nameTxt.font = font;
     }
 }
