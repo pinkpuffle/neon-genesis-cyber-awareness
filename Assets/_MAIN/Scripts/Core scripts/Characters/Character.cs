@@ -41,7 +41,7 @@ namespace CHARACTERS
         public Coroutine Say(List<string> dialogue)
         {
             dialogueSys.ShowSpeakerName(displayName);
-            dialogueSys.ApplySpeakerDataToDialogueContainer(name);
+            dialogueSys.ApplySpeakerDataToDialogueContainer(config);
             return dialogueSys.Say(dialogue);
         }
 
