@@ -11,6 +11,7 @@ namespace CHARACTERS
         public string displayName = "";
         public RectTransform root = null;
         public Animator animator;
+        public CharacterConfigData config;
 
         protected CharacterManager manager => CharacterManager.instance;
         public DialogueSys dialogueSys => DialogueSys.instance;
@@ -20,10 +21,11 @@ namespace CHARACTERS
         public bool isHiding => coHiding != null;
         public virtual bool isVisible => false;
 
-        public Character(string name, GameObject prefab)
+        public Character(string name, GameObject prefab, CharacterConfigData config)
         {
             this.name = name;
             displayName = name;
+            this.config = config;
 
             if(prefab != null)
             {
