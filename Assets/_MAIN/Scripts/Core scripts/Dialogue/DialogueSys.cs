@@ -51,6 +51,11 @@ namespace DIALOGUE
             Character character = CharacterManager.instance.GetCharacter(speakerName); //retrieve char
             CharacterConfigData config = character != null ? character.config : CharacterManager.instance.GetCharacterConfig(speakerName); //get config
 
+            ApplySpeakerDataToDialogueContainer(config);
+        }
+
+        public void ApplySpeakerDataToDialogueContainer(CharacterConfigData config)
+        {
             dialogueCont.SetDialogueColour(config.dialogueColour);
             dialogueCont.SetDialogueFont(config.dialogueFont);
             dialogueCont.nameContainer.SetNameColour(config.nameColour);
