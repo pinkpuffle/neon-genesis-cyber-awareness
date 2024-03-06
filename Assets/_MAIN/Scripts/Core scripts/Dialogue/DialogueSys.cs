@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using CHARACTERS;
 
 namespace DIALOGUE
 {
@@ -43,6 +44,11 @@ namespace DIALOGUE
         public void OnUserPromptNext()
         {
             onUserPromptNext?.Invoke();
+        }
+
+        public void ApplySpeakerDataToDialogueContainer(string speakerName)
+        {
+            Character character = CharacterManager.instance.GetCharacter(speakerName); //retrieve
         }
 
         public void ShowSpeakerName(string speakerName = "")
