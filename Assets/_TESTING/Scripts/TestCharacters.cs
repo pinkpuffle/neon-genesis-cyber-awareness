@@ -39,6 +39,8 @@ namespace TESTING
             };
             yield return DialogueSys.instance.Say(lines);
 
+            Debug.Log("Finished");
+
 
 
 
@@ -65,7 +67,7 @@ namespace TESTING
 
             //yield return Hacker.Say("This is a line that I want to say.{a} It is a simple line.");
 
-            Debug.Log("Finished");
+            //Debug.Log("Finished");
 
 
         }
