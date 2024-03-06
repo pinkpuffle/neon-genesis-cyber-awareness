@@ -24,6 +24,11 @@ namespace CHARACTERS
             instance = this;
         }
 
+        public CharacterConfigData GetCharacterConfig(string characterName)
+        {
+            return config.GetConfig(characterName);
+        }
+
         public Character GetCharacter(string characterName, bool createIfDoesNotExist = false)
         {
             if (characters.ContainsKey(characterName.ToLower()))
