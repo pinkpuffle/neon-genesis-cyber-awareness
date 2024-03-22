@@ -15,10 +15,10 @@ namespace TESTING
             //Character Michael = CharacterManager.instance.CreateCharacter("Michael");
             //Character Michael2 = CharacterManager.instance.CreateCharacter("Michael");
 
-            Character Nixon = CharacterManager.instance.CreateCharacter("Nixon");
+            //Character Nixon = CharacterManager.instance.CreateCharacter("Nixon");
 
 
-            //StartCoroutine(Test());
+            StartCoroutine(Test());
 
         }
 
@@ -30,7 +30,19 @@ namespace TESTING
 
         IEnumerator Test()
         {
-            return null;
+            Character Boss = CharacterManager.instance.CreateCharacter("Boss");
+
+            yield return new WaitForSeconds(1f);
+
+            yield return Boss.Hide();
+
+            yield return new WaitForSeconds(0.5f);
+
+            yield return Boss.Show();
+
+            yield return Boss.Say("Hi");
+
+
             //List<string> lines = new List<string>()
             //{
             //    "narrator \"Hi\"",
