@@ -15,21 +15,21 @@ MonoBehaviour:
   characters:
   - name: Nixon
     alias: n
-    characterType: 0
+    characterType: 1
     nameColour: {r: 0.40678114, g: 0.25178, b: 0.7735849, a: 1}
     dialogueColour: {r: 0.63584334, g: 0.16789784, b: 0.7264151, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   - name: Boss
     alias: b
-    characterType: 0
+    characterType: 1
     nameColour: {r: 0.21757784, g: 0.7830189, b: 0.13665895, a: 1}
     dialogueColour: {r: 0.30599636, g: 0.6698113, b: 0.20536669, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     dialogueFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   - name: Hacker
     alias: h
-    characterType: 0
+    characterType: 1
     nameColour: {r: 0.034843344, g: 0.056714606, b: 0.8207547, a: 1}
     dialogueColour: {r: 0.1522784, g: 0.30896333, b: 0.5471698, a: 1}
     nameFont: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
