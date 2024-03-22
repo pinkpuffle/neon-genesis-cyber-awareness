@@ -18,7 +18,7 @@ namespace TESTING
             Character Nixon = CharacterManager.instance.CreateCharacter("Nixon");
 
 
-            StartCoroutine(Test());
+            //StartCoroutine(Test());
 
         }
 
