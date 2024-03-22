@@ -30,6 +30,8 @@ namespace TESTING
 
         IEnumerator Test()
         {
+            yield return new WaitForSeconds(1f);
+
             Character Boss = CharacterManager.instance.CreateCharacter("Boss");
 
             yield return new WaitForSeconds(1f);
