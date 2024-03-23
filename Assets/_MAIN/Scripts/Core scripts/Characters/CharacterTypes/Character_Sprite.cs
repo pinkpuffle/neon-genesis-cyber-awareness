@@ -1,17 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace CHARACTERS
 {
     public class Character_Sprite : Character
     {
+        private const string SPRITE_RENDERED_PARENT_NAME = "Renderers";
         private CanvasGroup rootCG => root.GetComponent < CanvasGroup>();
         public Character_Sprite(string name, GameObject prefab, CharacterConfigData config) : base(name, prefab, config)
         {
             rootCG.alpha = 0;
+
+            GetLayers();
+
             Show();
             Debug.Log($"Created Sprite Character: '{name}'");
+        }
+
+        private void GetLayers()
+        {
+            Transform rendererRoot = animator.transform.Find(SPRITE_RENDERED_PARENT_NAME);
+            if (rendererRoot == null)
+                return;
+
+            for(int i = 0; i < rendererRoot.transform.childCount; i++) //for renderer (only 1 for my chars)
+            {
+                Transform child = rendererRoot.transform.GetChild(i);
+
+                Image rendererImage = child.GetComponent<Image>();
+                
+                if(rendererImage != null) //means have layer
+                {
+                    
+                }
+            }
         }
 
         public override IEnumerator ShowingOrHiding(bool show)
