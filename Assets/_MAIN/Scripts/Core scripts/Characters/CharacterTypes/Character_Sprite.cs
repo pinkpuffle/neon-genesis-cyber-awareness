@@ -17,7 +17,7 @@ namespace CHARACTERS
 
             //GetLayers();
 
-            Show();
+            //Show();
             Debug.Log($"Created Sprite Character: '{name}'");
         }
 

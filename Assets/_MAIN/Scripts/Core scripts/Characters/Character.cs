@@ -77,6 +77,27 @@ namespace CHARACTERS
             yield return null;
         }
 
+        public virtual void SetPosition(Vector2 position)
+        {
+            (Vector2 minAnchorTarget, Vector2 maxAnrchorTarget) = ConvertUITargetPositionToRelativeCharacterAnchorTargets(position);
+
+            root.anchorMin = minAnchorTarget;
+            root.anchorMax = maxAnrchorTarget;
+        }
+
+        protected(Vector2, Vector2) ConvertUITargetPositionToRelativeCharacterAnchorTargets(Vector2 position)
+        {
+            Vector2 padding = root.anchorMax - root.anchorMin;
+
+            float maxX = 1f - padding.x;
+            float maxY = 1f - padding.y;
+
+            Vector2 minAnchorTarget = new Vector2(maxX * position.x, maxY * position.y);
+            Vector2 maxAnchorTarget = minAnchorTarget + padding;
+
+            return (minAnchorTarget, maxAnchorTarget);
+        }
+
         public enum CharacterType //most of these are optional
         {
             Text,

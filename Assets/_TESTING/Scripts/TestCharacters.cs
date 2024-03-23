@@ -15,11 +15,8 @@ namespace TESTING
             //Character Michael = CharacterManager.instance.CreateCharacter("Michael");
             //Character Michael2 = CharacterManager.instance.CreateCharacter("Michael");
 
-            Character Nixon = CharacterManager.instance.CreateCharacter("Nixon");
-            Character Boss = CharacterManager.instance.CreateCharacter("Boss");
-            Character Hacker = CharacterManager.instance.CreateCharacter("Hacker");
 
-            //StartCoroutine(Test());
+            StartCoroutine(Test());
 
         }
 
@@ -33,9 +30,17 @@ namespace TESTING
         {
             //yield return new WaitForSeconds(1f);
 
-            //Character Nixon = CharacterManager.instance.CreateCharacter("Nixon");
-            //Character Boss = CharacterManager.instance.CreateCharacter("Boss");
-            //Character Hacker = CharacterManager.instance.CreateCharacter("Hacker");
+            Character Nixon = CharacterManager.instance.CreateCharacter("Nixon");
+            Character Boss = CharacterManager.instance.CreateCharacter("Boss");
+            Character Hacker = CharacterManager.instance.CreateCharacter("Hacker");
+
+            Nixon.SetPosition(Vector2.zero);
+            Boss.SetPosition(Vector2.one);
+            Hacker.SetPosition(new Vector2(0.5f, 0.5f));
+
+            Nixon.Show();
+            Boss.Show();
+            Hacker.Show();
 
             //yield return new WaitForSeconds(1f);
 
