@@ -9,6 +9,8 @@ namespace CHARACTERS
     {
         private const string SPRITE_RENDERED_PARENT_NAME = "Renderers";
         private CanvasGroup rootCG => root.GetComponent < CanvasGroup>();
+
+        public List<CharacterSpriteLayer> layers = new List<CharacterSpriteLayer>();
         public Character_Sprite(string name, GameObject prefab, CharacterConfigData config) : base(name, prefab, config)
         {
             rootCG.alpha = 0;
@@ -33,7 +35,9 @@ namespace CHARACTERS
                 
                 if(rendererImage != null) //means have layer
                 {
-                    
+                    CharacterSpriteLayer layer = new CharacterSpriteLayer(rendererImage, i);
+                    layers.Add(layer);
+                    child.name = $"Layer: {i}";
                 }
             }
         }
