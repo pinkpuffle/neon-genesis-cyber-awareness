@@ -14,5 +14,10 @@ namespace CHARACTERS
 
         private List<CanvasGroup> olderRenderers = new List<CanvasGroup>();
 
+        public CharacterSpriteLayer(Image defaultRenderer, int layer = 0)
+        {
+            renderer = defaultRenderer;
+            this.layer = layer;
+        }
     }
 }
