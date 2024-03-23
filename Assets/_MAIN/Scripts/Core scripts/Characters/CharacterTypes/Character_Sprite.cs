@@ -15,7 +15,7 @@ namespace CHARACTERS
         {
             rootCG.alpha = 0;
 
-            GetLayers();
+            //GetLayers();
 
             Show();
             Debug.Log($"Created Sprite Character: '{name}'");

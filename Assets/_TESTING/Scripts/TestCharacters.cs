@@ -15,10 +15,11 @@ namespace TESTING
             //Character Michael = CharacterManager.instance.CreateCharacter("Michael");
             //Character Michael2 = CharacterManager.instance.CreateCharacter("Michael");
 
-            //Character Nixon = CharacterManager.instance.CreateCharacter("Nixon");
+            Character Nixon = CharacterManager.instance.CreateCharacter("Nixon");
+            Character Boss = CharacterManager.instance.CreateCharacter("Boss");
+            Character Hacker = CharacterManager.instance.CreateCharacter("Hacker");
 
-
-            StartCoroutine(Test());
+            //StartCoroutine(Test());
 
         }
 
@@ -30,19 +31,21 @@ namespace TESTING
 
         IEnumerator Test()
         {
-            yield return new WaitForSeconds(1f);
+            //yield return new WaitForSeconds(1f);
 
-            Character Boss = CharacterManager.instance.CreateCharacter("Boss");
+            //Character Nixon = CharacterManager.instance.CreateCharacter("Nixon");
+            //Character Boss = CharacterManager.instance.CreateCharacter("Boss");
+            //Character Hacker = CharacterManager.instance.CreateCharacter("Hacker");
 
-            yield return new WaitForSeconds(1f);
+            //yield return new WaitForSeconds(1f);
 
-            yield return Boss.Hide();
+            //yield return Boss.Hide();
 
-            yield return new WaitForSeconds(0.5f);
+            //yield return new WaitForSeconds(0.5f);
 
-            yield return Boss.Show();
+            //yield return Boss.Show();
 
-            yield return Boss.Say("Hi");
+            //yield return Boss.Say("Hi");
 
 
             //List<string> lines = new List<string>()
@@ -56,7 +59,7 @@ namespace TESTING
 
             //Debug.Log("Finished");
 
-
+            yield return null;
 
 
             //Character Nixon = CharacterManager.instance.CreateCharacter("Nixon");
